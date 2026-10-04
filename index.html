@@ -24,9 +24,7 @@
       }
 
       * { box-sizing: border-box; }
-
       html { scroll-behavior: smooth; }
-
       body {
         margin: 0;
         font-family: Georgia, "Times New Roman", serif;
@@ -36,7 +34,6 @@
         color: var(--text);
         line-height: 1.7;
       }
-
       body::before {
         content: "";
         position: fixed;
@@ -45,234 +42,55 @@
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
         opacity: 0.35;
       }
-
       a { color: inherit; }
-
-      .wrap {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
+      .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
       header {
-        position: relative;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        overflow: hidden;
-        border-bottom: 1px solid var(--line);
+        position: relative; min-height: 100vh; display: grid; place-items: center; overflow: hidden; border-bottom: 1px solid var(--line);
       }
-
       .hero-art {
-        position: absolute;
-        inset: 0;
-        background-image: url("assets/plague-woodcut.svg");
-        background-size: cover;
-        background-position: center;
-        opacity: 0.18;
-        filter: grayscale(1) contrast(1.4) brightness(0.75);
+        position: absolute; inset: 0; background-image: url("assets/plague-woodcut.svg"); background-size: cover; background-position: center; opacity: 0.18; filter: grayscale(1) contrast(1.4) brightness(0.75);
       }
-
       .hero-glow {
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(circle at center, rgba(94, 114, 82, 0.35), transparent 45%);
+        position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(94, 114, 82, 0.35), transparent 45%);
       }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        padding: 80px 20px 60px;
-      }
-
+      .hero-content { position: relative; z-index: 1; text-align: center; padding: 80px 20px 60px; }
       .eyebrow {
-        display: inline-block;
-        letter-spacing: 0.28em;
-        font-size: 12px;
-        text-transform: uppercase;
-        color: var(--muted);
-        margin-bottom: 20px;
+        display: inline-block; letter-spacing: 0.28em; font-size: 12px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
       }
-
       h1 {
-        margin: 0;
-        font-size: clamp(42px, 8vw, 94px);
-        line-height: 0.96;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
+        margin: 0; font-size: clamp(42px, 8vw, 94px); line-height: 0.96; letter-spacing: 0.04em; text-transform: uppercase;
       }
-
       .subtitle {
-        max-width: 700px;
-        margin: 22px auto 32px;
-        font-size: clamp(22px, 2.8vw, 32px);
-        color: var(--muted);
-        font-style: italic;
+        max-width: 700px; margin: 22px auto 32px; font-size: clamp(22px, 2.8vw, 32px); color: var(--muted); font-style: italic;
       }
-
-      .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-
+      .buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
       .button {
-        display: inline-block;
-        padding: 14px 28px;
-        border: 1px solid rgba(171, 164, 141, 0.4);
-        background: linear-gradient(180deg, rgba(42, 52, 39, 0.85), rgba(17, 20, 17, 0.9));
-        color: var(--text);
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        font-size: 12px;
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        display: inline-block; padding: 14px 28px; border: 1px solid rgba(171, 164, 141, 0.4); background: linear-gradient(180deg, rgba(42, 52, 39, 0.85), rgba(17, 20, 17, 0.9)); color: var(--text); text-decoration: none; text-transform: uppercase; letter-spacing: 0.18em; font-size: 12px; transition: transform 0.2s ease, border-color 0.2s ease;
       }
-
-      .button:hover {
-        transform: translateY(-2px);
-        border-color: var(--olive-bright);
-      }
-
-      nav {
-        position: sticky;
-        top: 0;
-        z-index: 30;
-        background: rgba(9, 13, 9, 0.92);
-        backdrop-filter: blur(6px);
-        border-bottom: 1px solid var(--line);
-      }
-
-      nav .wrap {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-
-      nav a {
-        text-decoration: none;
-        color: var(--muted);
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        font-size: 11px;
-        padding: 8px 12px;
-        border-bottom: 1px solid transparent;
-      }
-
-      nav a:hover {
-        color: var(--text);
-        border-color: var(--olive-bright);
-      }
-
-      main {
-        position: relative;
-        z-index: 1;
-      }
-
-      section {
-        padding: 88px 0 72px;
-        border-bottom: 1px solid var(--line);
-      }
-
-      h2 {
-        margin: 0 0 24px;
-        font-size: clamp(30px, 4vw, 44px);
-        letter-spacing: 0.03em;
-      }
-
-      .lead {
-        font-size: clamp(21px, 2vw, 28px);
-        color: var(--text);
-        line-height: 1.55;
-        margin: 0 0 24px;
-        padding-left: 18px;
-        border-left: 3px solid var(--olive-bright);
-      }
-
-      p {
-        margin: 0 0 1.2em;
-        color: var(--text);
-        font-size: 19px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 18px;
-        margin-top: 28px;
-      }
-
-      .card {
-        background: linear-gradient(180deg, rgba(18, 22, 17, 0.88), rgba(12, 15, 12, 0.96));
-        border: 1px solid var(--line);
-        padding: 24px 22px;
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-      }
-
-      .card h3 {
-        margin: 0 0 8px;
-        font-size: 22px;
-      }
-
-      .card .tag {
-        display: block;
-        color: var(--gold);
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        font-size: 11px;
-        margin-bottom: 8px;
-      }
-
-      blockquote {
-        margin: 36px 0;
-        padding: 22px 24px 18px 24px;
-        border-left: 4px solid var(--blood);
-        background: rgba(16, 20, 15, 0.8);
-        color: var(--text);
-        font-style: italic;
-        font-size: clamp(20px, 2vw, 27px);
-      }
-
-      .contact {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 10px;
-        padding: 10px 18px;
-        text-decoration: none;
-        border: 1px solid var(--line);
-        background: rgba(19, 23, 18, 0.7);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-size: 12px;
-      }
-
-      footer {
-        padding: 36px 20px 60px;
-        text-align: center;
-        color: var(--muted);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        font-size: 11px;
-      }
-
-      @media (max-width: 640px) {
-        nav a { letter-spacing: 0.1em; }
-        .buttons { flex-direction: column; }
-        .button { width: 100%; }
-      }
+      .button:hover { transform: translateY(-2px); border-color: var(--olive-bright); }
+      nav { position: sticky; top: 0; z-index: 30; background: rgba(9, 13, 9, 0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+      nav .wrap { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding-top: 10px; padding-bottom: 10px; }
+      nav a { text-decoration: none; color: var(--muted); text-transform: uppercase; letter-spacing: 0.18em; font-size: 11px; padding: 8px 12px; border-bottom: 1px solid transparent; }
+      nav a:hover { color: var(--text); border-color: var(--olive-bright); }
+      main { position: relative; z-index: 1; }
+      section { padding: 88px 0 72px; border-bottom: 1px solid var(--line); }
+      h2 { margin: 0 0 24px; font-size: clamp(30px, 4vw, 44px); letter-spacing: 0.03em; }
+      .lead { font-size: clamp(21px, 2vw, 28px); color: var(--text); line-height: 1.55; margin: 0 0 24px; padding-left: 18px; border-left: 3px solid var(--olive-bright); }
+      p { margin: 0 0 1.2em; color: var(--text); font-size: 19px; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 28px; }
+      .card { background: linear-gradient(180deg, rgba(18, 22, 17, 0.88), rgba(12, 15, 12, 0.96)); border: 1px solid var(--line); padding: 24px 22px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18); }
+      .card h3 { margin: 0 0 8px; font-size: 22px; }
+      .card .tag { display: block; color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 11px; margin-bottom: 8px; }
+      blockquote { margin: 36px 0; padding: 22px 24px 18px 24px; border-left: 4px solid var(--blood); background: rgba(16, 20, 15, 0.8); color: var(--text); font-style: italic; font-size: clamp(20px, 2vw, 27px); }
+      .contact { display: inline-flex; align-items: center; gap: 10px; margin-top: 10px; padding: 10px 18px; text-decoration: none; border: 1px solid var(--line); background: rgba(19, 23, 18, 0.7); letter-spacing: 0.12em; text-transform: uppercase; font-size: 12px; }
+      footer { padding: 36px 20px 60px; text-align: center; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; font-size: 11px; }
+      @media (max-width: 640px) { nav a { letter-spacing: 0.1em; } .buttons { flex-direction: column; } .button { width: 100%; } }
     </style>
   </head>
   <body>
     <header>
       <div class="hero-art" aria-hidden="true"></div>
       <div class="hero-glow" aria-hidden="true"></div>
-
       <div class="hero-content wrap">
         <div class="eyebrow">Qara Ölümün kölgəsi</div>
         <h1>Ölüm Adası<br>Poveglia</h1>
@@ -297,22 +115,10 @@
       <section id="haqqinda">
         <div class="wrap">
           <h2>Haqqında</h2>
-          <p class="lead">
-            Poveglia, göydən enən susqunluqla, qaranlıq dənizlər və gecə kanvası arasında qalmış bir adadır.
-            Burada hər addım bir sirrə, hər səs bir xatirəyə dönüşür.
-          </p>
-          <p>
-            Romanın ruhu orta əsr Avropasının məğlubiyyət, qorxu və inam atmosferinə dayanır. Vəba, tənha ada,
-            unudulmuş bayramlar və insanın öz iç dünyasında itirdiyi yolu birləşdirir.
-          </p>
-          <p>
-            Hekayə, yalnız bir qurbanın deyil, bir cəmiyyətin dəhşətini əks etdirir. Qəribə işıqlar,
-            köhnə taxtalar və sahilsiz qaranlıq, hər səhifəni bir ədalətsizlik və xilasetmə arzusuna çevirir.
-          </p>
-
-          <blockquote>
-            “Ada səsini itirdikdən sonra, ağrı da insanı tərk etdi. Geri qalan yalnız qaranlıq və unudulmuş bir adın adıydı.”
-          </blockquote>
+          <p class="lead">Poveglia, göydən enən susqunluqla, qaranlıq dənizlər və gecə kanvası arasında qalmış bir adadır. Burada hər addım bir sirrə, hər səs bir xatirəyə dönüşür.</p>
+          <p>Romanın ruhu orta əsr Avropasının məğlubiyyət, qorxu və inam atmosferinə dayanır. Vəba, tənha ada, unudulmuş bayramlar və insanın öz iç dünyasında itirdiyi yolu birləşdirir.</p>
+          <p>Hekayə, yalnız bir qurbanın deyil, bir cəmiyyətin dəhşətini əks etdirir. Qəribə işıqlar, köhnə taxtalar və sahilsiz qaranlıq, hər səhifəni bir ədalətsizlik və xilasetmə arzusuna çevirir.</p>
+          <blockquote>“Ada səsini itirdikdən sonra, ağrı da insanı tərk etdi. Geri qalan yalnız qaranlıq və unudulmuş bir adın adıydı.”</blockquote>
         </div>
       </section>
 
@@ -320,21 +126,9 @@
         <div class="wrap">
           <h2>Fəsillər</h2>
           <div class="grid">
-            <article class="card">
-              <span class="tag">Fəsil I</span>
-              <h3>Qaranlıq Körfəzin Sənhası</h3>
-              <p>Qışın qaranlıq xəttləri altında adanın ilk gölgesi görünür.</p>
-            </article>
-            <article class="card">
-              <span class="tag">Fəsil II</span>
-              <h3>Vəba Cəbhəsi</h3>
-              <p>Hər evin divarları bir sirrə, hər nəfəs bir gözyaşına çevrilir.</p>
-            </article>
-            <article class="card">
-              <span class="tag">Fəsil III</span>
-              <h3>Əzabın Dənizi</h3>
-              <p>Həsrət, xəyanət və inam arasında sürünən gizli yol görünür.</p>
-            </article>
+            <article class="card"><span class="tag">Fəsil I</span><h3>Qaranlıq Körfəzin Sənhası</h3><p>Qışın qaranlıq xəttləri altında adanın ilk gölgesi görünür.</p></article>
+            <article class="card"><span class="tag">Fəsil II</span><h3>Vəba Cəbhəsi</h3><p>Hər evin divarları bir sirrə, hər nəfəs bir gözyaşına çevrilir.</p></article>
+            <article class="card"><span class="tag">Fəsil III</span><h3>Əzabın Dənizi</h3><p>Həsrət, xəyanət və inam arasında sürünən gizli yol görünür.</p></article>
           </div>
         </div>
       </section>
@@ -343,21 +137,9 @@
         <div class="wrap">
           <h2>Personajlar</h2>
           <div class="grid">
-            <article class="card">
-              <span class="tag">Əsas personaj</span>
-              <h3>Hüseyn</h3>
-              <p>Atəşli yaddaş, ancaq bir xatirə içində qalmış bir adam.</p>
-            </article>
-            <article class="card">
-              <span class="tag">Tərcüməçi</span>
-              <h3>Qaranlıq Rahib</h3>
-              <p>O, adanın sirlərini qoxuyan, amma kiminsə səsini yavaş-yavaş yuyan biri.</p>
-            </article>
-            <article class="card">
-              <span class="tag">Səslər</span>
-              <h3>Vebanın İşığı</h3>
-              <p>Hər küncə sızan xəbərdarlıq, hər tikən çadırın altında gizli hekayə.</p>
-            </article>
+            <article class="card"><span class="tag">Əsas personaj</span><h3>Hüseyn</h3><p>Atəşli yaddaş, ancaq bir xatirə içində qalmış bir adam.</p></article>
+            <article class="card"><span class="tag">Tərcüməçi</span><h3>Qaranlıq Rahib</h3><p>O, adanın sirlərini qoxuyan, amma kiminsə səsini yavaş-yavaş yuyan biri.</p></article>
+            <article class="card"><span class="tag">Səslər</span><h3>Vebanın İşığı</h3><p>Hər küncə sızan xəbərdarlıq, hər tikən çadırın altında gizli hekayə.</p></article>
           </div>
         </div>
       </section>
@@ -365,16 +147,12 @@
       <section id="iletisime">
         <div class="wrap">
           <h2>Əlaqə</h2>
-          <p>
-            Əgər bu hekayə ilə bağlı fikir, təklif və ya əməkdaşlıq istəyirsinizsə, yazın.
-          </p>
+          <p>Əgər bu hekayə ilə bağlı fikir, təklif və ya əməkdaşlıq istəyirsinizsə, yazın.</p>
           <a class="contact" href="mailto:hello@example.com">İndi yazın</a>
         </div>
       </section>
     </main>
 
-    <footer>
-      Poveglia • Qaranlıq hekayələr, qaranlıq adalar
-    </footer>
+    <footer>Poveglia • Qaranlıq hekayələr, qaranlıq adalar</footer>
   </body>
 </html>
