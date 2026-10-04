@@ -1,512 +1,380 @@
 <!doctype html>
-<!doctype html>
 <html lang="az">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ölüm Adası Poveglia — Hüseyn</title>
-<meta name="description" content="Ölüm Adası Poveglia — Hüseynin orta əsr vəba romanı. Qara Ölümün kölgəsində bir hekayə.">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ölüm Adası Poveglia</title>
+    <meta
+      name="description"
+      content="Ölüm Adası Poveglia — orta əsr vəba romanı, qaranlıq cizgilər, tənha ada və sirrli hekayə."
+    >
+    <style>
+      :root {
+        --bg: #090d09;
+        --bg-soft: #101710;
+        --panel: rgba(19, 24, 18, 0.9);
+        --panel-strong: rgba(13, 17, 13, 0.96);
+        --line: rgba(168, 159, 134, 0.25);
+        --text: #e7dcc1;
+        --muted: #c9bba1;
+        --gold: #b89a6f;
+        --olive: #5b6d52;
+        --olive-bright: #81967a;
+        --blood: #7d2a2a;
+      }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=MedievalSharp&display=swap" rel="stylesheet">
+      * { box-sizing: border-box; }
 
-<style>
-:root {
-  --bg-deep: #080907;
-  --charcoal-900: #0d100d;
-  --charcoal-800: #131713;
-  --charcoal-700: #1b201b;
-  --olive-night: #151b14;
-  --olive-deep: #1e261d;
-  --olive-muted: #2e3b2c;
-  --olive-accent: #495a43;
-  --olive-glow: #384934;
-  --parchment-base: #d8cdb8;
-  --parchment-bright: #ede3ce;
-  --parchment-dim: #b5a993;
-  --parchment-shadow: #877c68;
-  --parchment-faded: #625c50;
-  --blood-dark: #581616;
-  --blood-ember: #7d2424;
-  --line-tomb: #282f26;
-  --line-highlight: #3b4538;
-  --shadow-fog: 0 20px 45px rgba(0,0,0,0.85);
-}
+      html { scroll-behavior: smooth; }
 
-* { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        background:
+          radial-gradient(circle at top, rgba(87, 108, 81, 0.12), transparent 40%),
+          linear-gradient(180deg, #060807 0%, #0a0d0a 48%, #070907 100%);
+        color: var(--text);
+        line-height: 1.7;
+      }
 
-html {
-  scroll-behavior: smooth;
-}
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+        opacity: 0.35;
+      }
 
-body {
-  margin: 0;
-  background-color: var(--bg-deep);
-  color: var(--parchment-base);
-  font-family: "EB Garamond", Garamond, "Times New Roman", serif;
-  font-size: 20px;
-  line-height: 1.8;
-  position: relative;
-  overflow-x: hidden;
-  background-image:
-    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(30,38,29,.45) 0%, transparent 70%),
-    radial-gradient(circle 800px at 20% 40%, rgba(22,28,21,.35) 0%, transparent 60%),
-    radial-gradient(circle 700px at 80% 75%, rgba(26,32,24,.4) 0%, transparent 65%),
-    linear-gradient(180deg,#0a0d0a 0%,#070907 40%,#090c09 70%,#050605 100%);
-  background-attachment: fixed;
-}
+      a { color: inherit; }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 100;
-  opacity: .045;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 99;
-  background: radial-gradient(ellipse at center,transparent 40%,rgba(5,7,5,.65) 75%,rgba(2,3,2,.94) 100%);
-}
+      header {
+        position: relative;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+      }
 
-.fog-layer {
-  position: fixed;
-  inset: -100px;
-  pointer-events: none;
-  z-index: 1;
-  background:
-    radial-gradient(circle at 30% 20%,rgba(42,54,40,.09) 0%,transparent 50%),
-    radial-gradient(circle at 80% 70%,rgba(30,42,30,.08) 0%,transparent 45%);
-  animation: fogDrift 38s ease-in-out infinite alternate;
-}
+      .hero-art {
+        position: absolute;
+        inset: 0;
+        background-image: url("assets/plague-woodcut.svg");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.18;
+        filter: grayscale(1) contrast(1.4) brightness(0.75);
+      }
 
-@keyframes fogDrift {
-  0% { transform:translateY(0) scale(1); opacity:.7; }
-  50% { transform:translateY(-40px) translateX(25px) scale(1.05); opacity:.95; }
-  100% { transform:translateY(20px) translateX(-30px) scale(1); opacity:.7; }
-}
+      .hero-glow {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at center, rgba(94, 114, 82, 0.35), transparent 45%);
+      }
 
-h1,h2,h3,nav,.kicker,.num,.btn-medieval {
-  font-family:"Cinzel",Georgia,serif;
-  letter-spacing:.04em;
-}
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 80px 20px 60px;
+      }
 
-.ornament {
-  display:block;
-  text-align:center;
-  font-family:"Cinzel Decorative",serif;
-  color:var(--olive-accent);
-  opacity:.75;
-  user-select:none;
-  margin:18px 0;
-  font-size:19px;
-  letter-spacing:.35em;
-}
+      .eyebrow {
+        display: inline-block;
+        letter-spacing: 0.28em;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 20px;
+      }
 
-header {
-  min-height:94vh;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  padding:80px 24px 60px;
-  position:relative;
-  overflow:hidden;
-  border-bottom:1px solid var(--line-tomb);
-}
+      h1 {
+        margin: 0;
+        font-size: clamp(42px, 8vw, 94px);
+        line-height: 0.96;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
 
-.hero-background-art {
-  position:absolute;
-  inset:0;
-  z-index:0;
-  opacity:.17;
-  background-image:url('assets/plague-woodcut.jpg');
-  background-size:cover;
-  background-position:center 30%;
-  filter:grayscale(85%) contrast(140%) brightness(.65) sepia(25%);
-  mask-image:radial-gradient(ellipse at 50% 50%,black 25%,transparent 75%);
-  -webkit-mask-image:radial-gradient(ellipse at 50% 50%,black 25%,transparent 75%);
-}
+      .subtitle {
+        max-width: 700px;
+        margin: 22px auto 32px;
+        font-size: clamp(22px, 2.8vw, 32px);
+        color: var(--muted);
+        font-style: italic;
+      }
 
-.hero-glow {
-  position:absolute;
-  top:35%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:650px;
-  height:480px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(74,91,66,.22) 0%,rgba(35,46,33,.1) 45%,transparent 75%);
-  filter:blur(60px);
-  pointer-events:none;
-  z-index:1;
-}
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
 
-.cover {
-  position:relative;
-  z-index:2;
-  max-width:900px;
-  padding:0 10px;
-}
+      .button {
+        display: inline-block;
+        padding: 14px 28px;
+        border: 1px solid rgba(171, 164, 141, 0.4);
+        background: linear-gradient(180deg, rgba(42, 52, 39, 0.85), rgba(17, 20, 17, 0.9));
+        color: var(--text);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
 
-h1 {
-  font-size:clamp(42px,8.5vw,86px);
-  font-weight:700;
-  line-height:1.08;
-  margin:12px 0 16px;
-  color:var(--parchment-bright);
-  text-shadow:0 2px 4px rgba(0,0,0,.9),0 8px 30px rgba(0,0,0,.8),0 0 50px rgba(73,90,67,.2);
-  letter-spacing:.03em;
-}
+      .button:hover {
+        transform: translateY(-2px);
+        border-color: var(--olive-bright);
+      }
 
-h1 span {
-  display:inline-block;
-  color:#ede4d2;
-  border-bottom:1px solid rgba(135,124,104,.35);
-  padding-bottom:4px;
-}
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(9, 13, 9, 0.92);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--line);
+      }
 
-.subtitle {
-  color:var(--parchment-dim);
-  font-size:clamp(20px,3.2vw,25px);
-  font-style:italic;
-  max-width:680px;
-  margin:0 auto 32px;
-  letter-spacing:.02em;
-  text-shadow:0 2px 10px rgba(0,0,0,.8);
-}
+      nav .wrap {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
 
-.btn-medieval {
-  display:inline-block;
-  position:relative;
-  text-decoration:none;
-  font-size:13.5px;
-  font-weight:600;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  color:var(--parchment-bright);
-  background:linear-gradient(180deg,#242f22 0%,#171f16 100%);
-  border:1px solid #4a5c44;
-  padding:14px 32px;
-  border-radius:2px;
-  cursor:pointer;
-  box-shadow:0 4px 18px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.08);
-  transition:all .25s ease;
-}
+      nav a {
+        text-decoration: none;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 11px;
+        padding: 8px 12px;
+        border-bottom: 1px solid transparent;
+      }
 
-.btn-medieval:hover {
-  background:linear-gradient(180deg,#2f3e2c 0%,#1e291c 100%);
-  border-color:#6b8362;
-  color:#fff;
-  transform:translateY(-2px);
-}
+      nav a:hover {
+        color: var(--text);
+        border-color: var(--olive-bright);
+      }
 
-nav {
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(10,13,10,.94);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line-tomb);
-  display:flex;
-  gap:8px;
-  justify-content:center;
-  flex-wrap:wrap;
-  padding:12px 16px;
-  box-shadow:0 8px 30px rgba(0,0,0,.6);
-}
+      main {
+        position: relative;
+        z-index: 1;
+      }
 
-nav a {
-  color:var(--parchment-dim);
-  text-decoration:none;
-  padding:6px 14px;
-  font-size:12.5px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  transition:all .2s ease;
-  border-bottom:1px solid transparent;
-}
+      section {
+        padding: 88px 0 72px;
+        border-bottom: 1px solid var(--line);
+      }
 
-nav a:hover {
-  color:var(--parchment-bright);
-  border-bottom-color:var(--olive-accent);
-  background:rgba(30,38,29,.35);
-}
+      h2 {
+        margin: 0 0 24px;
+        font-size: clamp(30px, 4vw, 44px);
+        letter-spacing: 0.03em;
+      }
 
-main {
-  position:relative;
-  z-index:2;
-  max-width:960px;
-  margin:auto;
-  padding:20px 24px 120px;
-}
+      .lead {
+        font-size: clamp(21px, 2vw, 28px);
+        color: var(--text);
+        line-height: 1.55;
+        margin: 0 0 24px;
+        padding-left: 18px;
+        border-left: 3px solid var(--olive-bright);
+      }
 
-section {
-  padding:85px 0 65px;
-  border-bottom:1px solid var(--line-tomb);
-  position:relative;
-}
+      p {
+        margin: 0 0 1.2em;
+        color: var(--text);
+        font-size: 19px;
+      }
 
-h2 {
-  font-size:clamp(28px,4.2vw,38px);
-  font-weight:600;
-  color:var(--parchment-bright);
-  margin-top:0;
-  margin-bottom:24px;
-  display:flex;
-  align-items:center;
-  gap:16px;
-  text-shadow:0 2px 8px rgba(0,0,0,.7);
-}
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 18px;
+        margin-top: 28px;
+      }
 
-h2::after {
-  content:"";
-  flex:1;
-  height:1px;
-  background:linear-gradient(90deg,var(--line-highlight) 0%,transparent 95%);
-}
+      .card {
+        background: linear-gradient(180deg, rgba(18, 22, 17, 0.88), rgba(12, 15, 12, 0.96));
+        border: 1px solid var(--line);
+        padding: 24px 22px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+      }
 
-h3 {
-  font-size:21px;
-  font-weight:600;
-  color:#d1c5ae;
-  margin:0 0 10px;
-  letter-spacing:.05em;
-}
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 22px;
+      }
 
-p {
-  margin:0 0 1.5em;
-  color:var(--parchment-base);
-}
+      .card .tag {
+        display: block;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 11px;
+        margin-bottom: 8px;
+      }
 
-.lead {
-  font-size:23px;
-  line-height:1.65;
-  color:var(--parchment-bright);
-  border-left:3px solid var(--olive-accent);
-  padding-left:20px;
-  margin-bottom:28px;
-}
+      blockquote {
+        margin: 36px 0;
+        padding: 22px 24px 18px 24px;
+        border-left: 4px solid var(--blood);
+        background: rgba(16, 20, 15, 0.8);
+        color: var(--text);
+        font-style: italic;
+        font-size: clamp(20px, 2vw, 27px);
+      }
 
-.woodcut-banner {
-  margin:40px 0 30px;
-  border:1px solid var(--line-tomb);
-  border-radius:3px;
-  overflow:hidden;
-  background:var(--charcoal-900);
-  box-shadow:var(--shadow-fog);
-  display:grid;
-  grid-template-columns:280px 1fr;
-  align-items:center;
-}
+      .contact {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        padding: 10px 18px;
+        text-decoration: none;
+        border: 1px solid var(--line);
+        background: rgba(19, 23, 18, 0.7);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
 
-.woodcut-img-wrapper {
-  position:relative;
-  height:100%;
-  min-height:220px;
-  overflow:hidden;
-  border-right:1px solid var(--line-tomb);
-}
+      footer {
+        padding: 36px 20px 60px;
+        text-align: center;
+        color: var(--muted);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 11px;
+      }
 
-.woodcut-img-wrapper img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:grayscale(70%) contrast(125%) sepia(25%);
-  transition:transform .6s ease,filter .6s ease;
-  display:block;
-}
+      @media (max-width: 640px) {
+        nav a { letter-spacing: 0.1em; }
+        .buttons { flex-direction: column; }
+        .button { width: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
 
-.woodcut-banner:hover .woodcut-img-wrapper img {
-  transform:scale(1.04);
-  filter:grayscale(40%) contrast(120%) sepia(15%);
-}
+      <div class="hero-content wrap">
+        <div class="eyebrow">Qara Ölümün kölgəsi</div>
+        <h1>Ölüm Adası<br>Poveglia</h1>
+        <p class="subtitle">Hüseynin orta əsr vəba romanı — xəyal, ürk ağrısı və sirr.</p>
+        <div class="buttons">
+          <a class="button" href="#haqqinda">Daha çox</a>
+          <a class="button" href="#fasil" >Fəsillər</a>
+        </div>
+      </div>
+    </header>
 
-.woodcut-caption {
-  padding:26px 30px;
-  font-size:17.5px;
-  line-height:1.65;
-  color:var(--parchment-base);
-}
+    <nav>
+      <div class="wrap">
+        <a href="#haqqinda">Haqqında</a>
+        <a href="#fasil">Fəsillər</a>
+        <a href="#personajlar">Personajlar</a>
+        <a href="#iletisime">Əlaqə</a>
+      </div>
+    </nav>
 
-.caption-title {
-  font-family:"Cinzel",serif;
-  font-size:14px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--parchment-dim);
-  margin-bottom:10px;
-  display:block;
-}
+    <main>
+      <section id="haqqinda">
+        <div class="wrap">
+          <h2>Haqqında</h2>
+          <p class="lead">
+            Poveglia, göydən enən susqunluqla, qaranlıq dənizlər və gecə kanvası arasında qalmış bir adadır.
+            Burada hər addım bir sirrə, hər səs bir xatirəyə dönüşür.
+          </p>
+          <p>
+            Romanın ruhu orta əsr Avropasının məğlubiyyət, qorxu və inam atmosferinə dayanır. Vəba, tənha ada,
+            unudulmuş bayramlar və insanın öz iç dünyasında itirdiyi yolu birləşdirir.
+          </p>
+          <p>
+            Hekayə, yalnız bir qurbanın deyil, bir cəmiyyətin dəhşətini əks etdirir. Qəribə işıqlar,
+            köhnə taxtalar və sahilsiz qaranlıq, hər səhifəni bir ədalətsizlik və xilasetmə arzusuna çevirir.
+          </p>
 
-.grid-container {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:16px;
-  margin-top:25px;
-}
+          <blockquote>
+            “Ada səsini itirdikdən sonra, ağrı da insanı tərk etdi. Geri qalan yalnız qaranlıq və unudulmuş bir adın adıydı.”
+          </blockquote>
+        </div>
+      </section>
 
-.card {
-  position:relative;
-  border:1px solid var(--line-tomb);
-  background:linear-gradient(155deg,rgba(22,28,21,.85) 0%,rgba(13,16,13,.95) 100%);
-  padding:24px;
-  border-radius:3px;
-  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
-  box-shadow:0 4px 18px rgba(0,0,0,.5);
-}
+      <section id="fasil">
+        <div class="wrap">
+          <h2>Fəsillər</h2>
+          <div class="grid">
+            <article class="card">
+              <span class="tag">Fəsil I</span>
+              <h3>Qaranlıq Körfəzin Sənhası</h3>
+              <p>Qışın qaranlıq xəttləri altında adanın ilk gölgesi görünür.</p>
+            </article>
+            <article class="card">
+              <span class="tag">Fəsil II</span>
+              <h3>Vəba Cəbhəsi</h3>
+              <p>Hər evin divarları bir sirrə, hər nəfəs bir gözyaşına çevrilir.</p>
+            </article>
+            <article class="card">
+              <span class="tag">Fəsil III</span>
+              <h3>Əzabın Dənizi</h3>
+              <p>Həsrət, xəyanət və inam arasında sürünən gizli yol görünür.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-.card::before {
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:2px;
-  background:linear-gradient(90deg,transparent 0%,var(--olive-accent) 50%,transparent 100%);
-  opacity:.35;
-}
+      <section id="personajlar">
+        <div class="wrap">
+          <h2>Personajlar</h2>
+          <div class="grid">
+            <article class="card">
+              <span class="tag">Əsas personaj</span>
+              <h3>Hüseyn</h3>
+              <p>Atəşli yaddaş, ancaq bir xatirə içində qalmış bir adam.</p>
+            </article>
+            <article class="card">
+              <span class="tag">Tərcüməçi</span>
+              <h3>Qaranlıq Rahib</h3>
+              <p>O, adanın sirlərini qoxuyan, amma kiminsə səsini yavaş-yavaş yuyan biri.</p>
+            </article>
+            <article class="card">
+              <span class="tag">Səslər</span>
+              <h3>Vebanın İşığı</h3>
+              <p>Hər küncə sızan xəbərdarlıq, hər tikən çadırın altında gizli hekayə.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-.card:hover {
-  transform:translateY(-4px);
-  border-color:var(--olive-accent);
-  box-shadow:0 12px 30px rgba(0,0,0,.7),0 0 15px rgba(56,73,52,.25);
-}
+      <section id="iletisime">
+        <div class="wrap">
+          <h2>Əlaqə</h2>
+          <p>
+            Əgər bu hekayə ilə bağlı fikir, təklif və ya əməkdaşlıq istəyirsinizsə, yazın.
+          </p>
+          <a class="contact" href="mailto:hello@example.com">İndi yazın</a>
+        </div>
+      </section>
+    </main>
 
-.card p {
-  margin:0;
-  font-size:18px;
-  color:var(--parchment-base);
-  line-height:1.6;
-}
-
-.chapter-card {
-  cursor:pointer;
-  min-height:120px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.chapter-card h3 {
-  margin:0;
-  font-size:19px;
-  line-height:1.4;
-}
-
-.chapter-card::after {
-  content:"Oxu  →";
-  position:absolute;
-  right:18px;
-  bottom:12px;
-  font-family:"Cinzel",serif;
-  font-size:10px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--olive-accent);
-  opacity:.75;
-}
-
-.character-role {
-  display:inline-block;
-  font-size:11px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:#9c8e76;
-  margin-bottom:8px;
-  font-family:"Cinzel",serif;
-}
-
-.num {
-  display:inline-block;
-  color:#8c9c84;
-  font-size:11.5px;
-  letter-spacing:.24em;
-  margin-bottom:8px;
-  font-weight:600;
-  border-bottom:1px solid rgba(140,156,132,.25);
-  padding-bottom:2px;
-}
-
-.quote {
-  position:relative;
-  background:linear-gradient(135deg,rgba(20,26,19,.75) 0%,rgba(13,17,13,.85) 100%);
-  border:1px solid var(--line-tomb);
-  border-left:4px solid var(--blood-ember);
-  padding:24px 30px;
-  color:var(--parchment-bright);
-  font-style:italic;
-  font-size:21px;
-  margin:35px 0;
-  box-shadow:0 8px 30px rgba(0,0,0,.5);
-  border-radius:2px;
-}
-
-.contact-badge {
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  margin-top:14px;
-  padding:8px 18px;
-  background:rgba(22,28,21,.6);
-  border:1px solid var(--line-tomb);
-  border-radius:2px;
-  color:var(--parchment-bright);
-  font-family:"Cinzel",serif;
-  font-size:13.5px;
-  letter-spacing:.08em;
-  text-decoration:none;
-}
-
-footer {
-  text-align:center;
-  color:var(--parchment-faded);
-  padding:60px 20px 40px;
-  font-size:15px;
-  font-family:"Cinzel",serif;
-  letter-spacing:.12em;
-  border-top:1px solid var(--line-tomb);
-  background:#050605;
-  position:relative;
-  z-index:2;
-}
-
-/* FƏSİL OXUYUCU */
-
-#chapter-reader {
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:1000;
-  background:rgba(6,8,6,.98);
-  overflow-y:auto;
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-}
-
-.reader-inner {
-  max-width:820px;
-  margin:auto;
-  padding:75px 28px 110px;
-}
-
-.reader-top {
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.reader-number {
-  display:block;
-  font-family:"Cinzel",serif;
-  font-size: 12px;
-letter-spacing: 0.28em;
-color: #8c9c84;
-
-  
+    <footer>
+      Poveglia • Qaranlıq hekayələr, qaranlıq adalar
+    </footer>
+  </body>
+</html>
