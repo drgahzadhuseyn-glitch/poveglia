@@ -35,7 +35,7 @@
         position: fixed;
         inset: 0;
         pointer-events: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='%23000'/%3E%3Crect width='100%25' height='100%25' fill='%23111' opacity='0.3' filter='url(%23n)'/%3E%3C/svg%3E");
         opacity: 0.35;
       }
       a { color: inherit; }
@@ -44,7 +44,7 @@
         position: relative; min-height: 100vh; display: grid; place-items: center; overflow: hidden; border-bottom: 1px solid var(--line);
       }
       .hero-art {
-        position: absolute; inset: 0; background-image: url("assets/plague-woodcut.svg"); background-size: cover; background-position: center; opacity: 0.18; filter: grayscale(1) contrast(1.4) brightness(0.75);
+        position: absolute; inset: 0; background-image: url("assets/plague-woodcut.svg"); background-size: cover; background-position: center; opacity: 0.18; filter: grayscale(1) contrast(1.4) brightness(0.8);
       }
       .hero-glow {
         position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(94, 114, 82, 0.35), transparent 45%);
@@ -61,7 +61,7 @@
       }
       .buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
       .button {
-        display: inline-block; padding: 14px 28px; border: 1px solid rgba(171, 164, 141, 0.4); background: linear-gradient(180deg, rgba(42, 52, 39, 0.85), rgba(17, 20, 17, 0.9)); color: var(--text); text-decoration: none; text-transform: uppercase; letter-spacing: 0.18em; font-size: 12px; transition: transform 0.2s ease, border-color 0.2s ease;
+        display: inline-block; padding: 14px 28px; border: 1px solid rgba(171, 164, 141, 0.4); background: linear-gradient(180deg, rgba(42, 52, 39, 0.85), rgba(17, 20, 17, 0.9)); color: var(--text); text-decoration: none; transition: all 0.3s; cursor: pointer;
       }
       .button:hover { transform: translateY(-2px); border-color: var(--olive-bright); }
       nav { position: sticky; top: 0; z-index: 30; background: rgba(9, 13, 9, 0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
@@ -77,12 +77,14 @@
       .card { background: linear-gradient(180deg, rgba(18, 22, 17, 0.88), rgba(12, 15, 12, 0.96)); border: 1px solid var(--line); padding: 24px 22px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18); }
       .card h3 { margin: 0 0 8px; font-size: 22px; }
       .card .tag { display: block; color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 11px; margin-bottom: 8px; }
-      blockquote { margin: 36px 0; padding: 22px 24px 18px 24px; border-left: 4px solid var(--blood); background: rgba(16, 20, 15, 0.8); color: var(--text); font-style: italic; font-size: clamp(20px, 2vw, 27px); }
-      .contact { display: inline-flex; align-items: center; gap: 10px; margin-top: 10px; padding: 10px 18px; text-decoration: none; border: 1px solid var(--line); background: rgba(19, 23, 18, 0.7); letter-spacing: 0.12em; text-transform: uppercase; font-size: 12px; }
+      blockquote { margin: 36px 0; padding: 22px 24px 18px 24px; border-left: 4px solid var(--blood); background: rgba(16, 20, 15, 0.8); color: var(--text); font-style: italic; font-size: clamp(20px, 1.8vw, 24px); }
+      .contact { display: inline-flex; align-items: center; gap: 10px; margin-top: 10px; padding: 10px 18px; text-decoration: none; border: 1px solid var(--line); background: rgba(19, 23, 18, 0.7); transition: all 0.3s; }
+      .contact:hover { border-color: var(--olive-bright); }
       .chapter-content { display: grid; gap: 22px; }
       .chapter-box { background: rgba(11, 15, 11, 0.9); border: 1px solid var(--line); padding: 24px 22px; }
       .chapter-box h3 { margin: 0 0 16px; font-size: clamp(24px, 3vw, 32px); }
       .chapter-box p { margin: 0 0 1em; }
+      .chapter-image { width: 100%; max-width: 400px; height: auto; margin: 16px 0; border: 1px solid var(--line); display: block; }
       footer { padding: 36px 20px 60px; text-align: center; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; font-size: 11px; }
       @media (max-width: 640px) { nav a { letter-spacing: 0.1em; } .buttons { flex-direction: column; } .button { width: 100%; } }
     </style>
@@ -116,9 +118,9 @@
         <div class="wrap">
           <h2>Haqqında</h2>
           <p class="lead">Poveglia, göydən enən susqunluqla, qaranlıq dənizlər və gecə kanvası arasında qalmış bir adadır. Burada hər addım bir sirrə, hər səs bir xatirəyə dönüşür.</p>
-          <p>Romanın ruhu orta əsr Avropasının məğlubiyyət, qorxu və inam atmosferinə dayanır. Vəba, tənha ada, unudulmuş bayramlar və insanın öz iç dünyasında itirdiyi yolu birləşdirir.</p>
-          <p>Hekayə, yalnız bir qurbanın deyil, bir cəmiyyətin dəhşətini əks etdirir. Qəribə işıqlar, köhnə taxtalar və sahilsiz qaranlıq, hər səhifəni bir ədalətsizlik və xilasetmə arzusuna çevirir.</p>
-          <blockquote>“Ada səsini itirdikdən sonra, ağrı da insanı tərk etdi. Geri qalan yalnız qaranlıq və unudulmuş bir adın adıydı.”</blockquote>
+          <p>Romanın ruhu orta əsr Avropasının məğlubiyyət, qorxu və inam atmosferinə dayanır. Vəba, tənha ada, unudulmuş bayramlar və insanın öz iç dünyasında itirdiyi yolu bizdən xəbər verir.</p>
+          <p>Hekayə, yalnız bir qurbanın deyil, bir cəmiyyətin dəhşətini əks etdirir. Qəribə işıqlar, köhnə taxtalar və sahilsiz qaranlıq, hər səhifəni bir ədalətsizlik və fəlakətlə doldurur.</p>
+          <blockquote>"Ada səsini itirdikdən sonra, ağrı da insanı tərk etdi. Geri qalan yalnız qaranlıq və unudulmuş bir adın adıydı."</blockquote>
         </div>
       </section>
 
@@ -127,80 +129,91 @@
           <h2>Fəsillər</h2>
           <div class="chapter-content">
             <div class="chapter-box">
-              <h3>Fəsil 1: Qısaca “Anna Montelupi de Bellandi”</h3>
-              <p>Hadisələr Orta əsrlər Avropasında, Böyük Vəba epidemiyası dövründə keçən hadisələrdən bəhs edir. Əsərin baş qəhrəmanı Anna Montelupi de Bellandi adında kasıb bir ailənin qızıdır. O, qatı xristianlıq dövründə özünü gizli şəkildə pagan düşüncələrə yaxın hiss edən, lakin cəmiyyətin zülmünə uyğun davranmağa məcbur olan bir şəxsdir.</p>
-              <p>Anna gözünü açandan bəri səfalət görmüş və bunu böyük acı ilə hiss etmişdi. Ətrafındakılarının gözəl ipək və kətan paltarları, oyuncaqları və asan həyat şəraiti onun üçün daha ağır bir iç boşluq yaradırdı. O, dövrünün ən böyük rəssamlarından biri olan Federiko Afronun tələbəsi olur.</p>
-              <p>Anna rəsmə böyük həvəs göstərir. Federikonun yanında o, yalnız texnika deyil, insanlıq, mərhəmət və özünü itirməməyi öyrənir. Rəssamlıq ona qaranlıq dünyada işıq, bir qaçış yolu olur.</p>
+              <h3>Fəsil 1: Qısaca "Anna Montelupi de Bellandi"</h3>
+              <img src="assets/chapter-01.png" alt="Fəsil 1" class="chapter-image">
+              <p>Hadisələr Orta əsrlər Avropasında, Böyük Vəba epidemiyası dövründə keçən hadisələrdən bəhs edir. Əsərin baş qəhrəmanı Anna Montelupi de Bellandi adında kimdə bir gənc qız olub.</p>
+              <p>Anna gözünü açandan bəri səfalət görmüş və bunu böyük acı ilə hiss etmişdi. Ətrafındakılarının gözəl ipək və kətan paltarları, oyuncaqları və asan həyatı, Annanın qəm və ticvəsi ilə əks toplayırdı.</p>
+              <p>Anna rəsmə böyük həvəs göstərir. Federikonun yanında o, yalnız texnika deyil, insanlıq, mərhəmət və özünü itirməməyi öyrənir. Rəssamlıq ona qaranlıq dünyanın kapısını açırdı.</p>
             </div>
 
             <div class="chapter-box">
               <h3>Fəsil 2: Tənhalığın ortaq nöqtəsi</h3>
-              <p>Anna ətrafa çox böyük maraqla baxan bir insan idi. Tez-tez Podova şəhərinin daş döşəli, ensiz küçələrində gəzər, bazarlara gedər, insanlarla dolu yerləri seyr edərdi. Lakin onun ən sevdiyi yer, şəhərin ən böyük meydanı — Müqəddəs Pavel meydanı olurdu.</p>
-              <p>Anna uşaqlıqdan bura hər gün gəlirdi və günün ən azı iki-üç saatını burada keçirirdi. Müəllimi Federiko ilə bu meydanda tanış olmuşdu. Onların dostluğu get-gedə dərinləşirdi. Federiko Annanı öz övladı qədər sevirdi və onu qızı kimi görürdü.</p>
-              <p>Annanın rəsmə olan marağı və heyranlığı artmaqda davam edirdi. Federiko dünyanın məşhur rəssamı olsa da, dəbdəbə düşkünü deyildi. O, qazandığı pulları yetimlərə, evsizlərə, ehtiyacı olanlara və dini quruluşlara bağışlayırdı. Onun həyatının tək əyləncəsi rəsm və onu qızı kimi sevən Anna olurdu.</p>
+              <img src="assets/chapter-02.png" alt="Fəsil 2" class="chapter-image">
+              <p>Anna ətrafa çox böyük maraqla baxan bir insan idi. Tez-tez Podova şəhərinin daş döşəli, ensiz küçələrində gəzər, bazarlara gedər, insanlarla dolu yerləri seyr edərdi.</p>
+              <p>Anna uşaqlıqdan bura hər gün gəlirdi və günün ən azı iki-üç saatını burada keçirirdi. Müəllimi Federiko ilə bu meydanda tanış olmuşdu. Onların dostluğu getdikcə güçlənirdi.</p>
+              <p>Annanın rəsmə olan marağı və heyranlığı artmaqda davam edirdi. Federiko dünyanın məşhur rəssamı olsa da, dəbdəbə düşkünü deyildi. O, qazandığı pulları yarımsıl insanlara yardım etməkdə istifadə edirdi.</p>
             </div>
 
             <div class="chapter-box">
               <h3>Fəsil 3: Qəribə qonaqlar</h3>
-              <p>1337-ci ilin aprel ayında, artıq 18 yaşına çatmış Anna, yenə qaynadılmış yumurta bulağı suyu və çovdar çörəyi götürüb, yatalək xəstə olan sevimli müəlliminin yanına gedirdi. Dar küçələri və meydanı keçib tam Federikonun qaldığı məhəlləyə dönəcəyi zaman qarşısını iki iri əsgər kəsdi.</p>
-              <p>Anna qorxdu. Əsgərlərdən biri ona gülümsədi və soruşdu: “Sən Federiko Afronun sevimli tələbəsisən?” Anna başını təsdiq etdi. Qısa söhbətdən sonra əsgərlər ona Federikonun onu gözlədiyini söylədilər. Bir az sonra onlar Federikonun evinə yola düşdülər.</p>
-              <p>Evin qarşısında iki gözəl qəhvəyi atın qoşulduğu fayton dayanırdı. Daha sonra Annaya hər şey aydın oldu: bu gələn əsgərlər Gelzburn qalasının baronu Qrond Jakkenzonun adamları idi. Baron qalanın yeni tikilən kilsəsinin fresklərini çəkmək üçün Federiko Afronu dəvət etmişdi.</p>
+              <img src="assets/chapter-03.png" alt="Fəsil 3" class="chapter-image">
+              <p>1337-ci ilin aprel ayında, artıq 18 yaşına çatmış Anna, yenə qaynadılmış yumurta bulağı suyu və çovdar çörəyi götürüb, yatalək xəstə olan sevimli müəlliminin qapısını döymişdir.</p>
+              <p>Anna qorxdu. Əsgərlərdən biri ona gülümsədi və soruşdu: "Sən Federiko Afronun sevimli tələbəsisən?" Anna başını təsdiq etdi. Qısa söhbətdən sonra əsgərlər onu dini sorğulamağa başladılar.</p>
+              <p>Evin qarşısında iki gözəl qəhvəyi atın qoşulduğu fayton dayanırdı. Daha sonra Annaya hər şey aydın oldu: bu gələn əsgərlər Gelzburn qalasının baronu Qrond Justinianinin adamları idi.</p>
             </div>
 
             <div class="chapter-box">
               <h3>Fəsil 4: Ümidsizliyin kəsişməsi</h3>
-              <p>Lakin heç bir şey planlaşdırıldığı kimi getmədi. Federiko artıq yaşlı idi və ölüm yatağındaydı. Baronun adamları, baronun sərt sözlərini eşidirdilər: “Ya Federikonu gətirəcəksiniz, ya da daha yaxşı bir rəssamı; əks halda qala zindanı sizi gözləyəcək.”</p>
-              <p>Federikonun ömrünün son günlərini yaşadığını görən əsgərlər qorxuya düşdülər. Sonunda birindən biri cəsarət edib Federikodan özünün və ya daha bacarıqlı rəssam olub olmadığını soruşdu. Yaşlı rəssamın cavabı olduqca qısa idi: “Tələbəm Anna.”</p>
-              <p>Anna həqiqətən də rəssamlıqda bacarıqlı idi, lakin hələ potensialını tam açmağa başlamamışdı. Üç il əvvəl Federiko ona fresk sənətini öyrətmişdi. Bu səbəbdən Annanın istedadına güvənirdi. Nəhayət Anna qərar verməyə məcbur oldu: evdən xəbərsiz yola çıxmaq və qalaya getmək.</p>
+              <img src="assets/chapter-04.png" alt="Fəsil 4" class="chapter-image">
+              <p>Lakin heç bir şey planlaşdırıldığı kimi getmədi. Federiko artıq yaşlı idi və ölüm yatağındaydı. Baronun adamları, baronun sərt sözlərini eşidirdilər: "Yenə də imkan yoxdur!"</p>
+              <p>Federikonun ömrünün son günlərini yaşadığını görən əsgərlər qorxuya düşdülər. Sonunda birindən biri cəsarət edib Federikodan özünün və ya daha bacarıqlı kimsəsi olub olmadığını soruşdu.</p>
+              <p>Anna həqiqətən də rəssamlıqda bacarıqlı idi, lakin hələ potensialını tam açmağa başlamamışdı. Üç il əvvəl Federiko ona fresk sənətini öyrətmişdi. Bu sənət, əsrimizdə də istifadə edilir.</p>
             </div>
 
             <div class="chapter-box">
               <h3>Fəsil 5: Gözlənilməz qarşılaşma</h3>
-              <p>Qala qapısında qonağını qarşılamağa gələn baron, yaşlı və beli bükülmüş Federikonun yerinə, faytondan zərif və saf gözəlliyi olan Annanı görəndə özünü itirdi. Bu qız gəncliyində aşiq olduğu, lakin ona qismət olmayan sevgisini xatırladan bir qıza çox bənzəyirdi.</p>
-              <p>Baronun nəfsi yenidən qəlbində cücərdi. Yaşı əlliyə yaxınlaşmışdı, həyatda hər şeyi əldə etmişdi, amma bu dəfə qarşısında əldə edə bilmədiyi bir şey dururdu — saflıq və ölümdən uzaq bir ruh. Baron Annaya yaxın olmaq və aralarında səmimiyyət yaratmaq üçün kilsə fresklərindən əvvəl özünün portretini çəkməsini tələb etdi.</p>
-              <p>Anna bütün bunların içində, heç bir şeyin çirkin olmadığını düşünürdü. O, işin yalnız sənət hissi olduğunu düşünür, amma baronun niyyəti başqadır. Onun məqsədi üzbəüz oturub Annanın gözlərinə baxmaq və mümkün olduqda bu saf qızı yoldan çıxarmaqdır.</p>
+              <img src="assets/chapter-05.png" alt="Fəsil 5" class="chapter-image">
+              <p>Qala qapısında qonağını qarşılamağa gələn baron, yaşlı və beli bükülmüş Federikonun yerinə, faytondan zərif və saf gözəlliyi olan Annanı görəndə özünü itirdi.</p>
+              <p>Baronun nəfsi yenidən qəlbində cücərdi. Yaşı əlliyə yaxınlaşmışdı, həyatda hər şeyi əldə etmişdi, amma bu dəfə qarşısında əldə edə bilmədiyi bir şey vardı — Anna!</p>
+              <p>Anna bütün bunların içində, heç bir şeyin çirkin olmadığını düşünürdü. O, işin yalnız sənət hissi olduğunu düşünür, amma baronun niyyəti başqadır. Onun ürəyində yalnız qehir qalırdı.</p>
             </div>
 
             <div class="chapter-box">
               <h3>Fəsil 6: Təhlükənin xəbərçisi</h3>
-              <p>Anna qalaya gəldikdən bir həftə sonra yüngül xəstələnir. Aralıq dənizinin isti sahilində yaşayan Anna, İtalyan Alplarının soyuq havasına uyğunlaşa bilmirdi. Həkim ona iki gün yataqdan çıxmamasını tövsiyə etdi.</p>
-              <p>Bu iki gün ərzində onu bir çox insan ziyarət etdi, onlardan biri də baronun xanımı idi. Xanım Annanı qısqandığı üçün zəhərləməyə gəlməmişdi. O, qızın həqiqətən saf olduğunu və başqa məqsədi olmadığını gördü. Bu səbəbdən ərinin Annaya qarşı olan pis niyyətini və narahat edici baxışlarının mənasını ona izah etdi.</p>
-              <p>Hər şeyi anlayan Anna barona qarşı dərin nifrət oyandırdı. Ertəsi gün sarayın xəbərçisi Maquona qarı, bir neçə sikkə qarşılığında eşitdiklərini barona çatdırdı. Baron artıq xanımından xilas olmağın vaxtının çatdığını düşündü, amma hələlik nə edəcəyini bilmirdi.</p>
+              <img src="assets/chapter-06.png" alt="Fəsil 6" class="chapter-image">
+              <p>Anna qalaya gəldikdən bir həftə sonra yüngül xəstələnir. Aralıq dənizinin isti sahilində yaşayan Anna, İtalyan Alplarının soyuq havasına uyğunlaşa bilmirdi. Həmçinin baronun fəaliyyətləri onu çox hiddətləndirir.</p>
+              <p>Bu iki gün ərzində onu bir çox insan ziyarət etdi, onlardan biri də baronun xanımı idi. Xanım Annanı qısqandığı üçün zəhərləməyə gəlməmişdi. O, qızın həyatdan ayrılmasını istəyirdi.</p>
+              <p>Hər şeyi anlayan Anna barona qarşı dərin nifrət oyandırdı. Ertəsi gün sarayın xəbərçisi Maquona qarı, bir neçə sikkə qarşılığında eşitdiklərini barona çatdırırdı.</p>
             </div>
 
             <div class="chapter-box">
               <h3>Fəsil 7: Qara Ölüm</h3>
-              <p>Həmin gecə Romadan gələn elçi, Qara Ölümün krallığın bütün cənubuna yayıldığını, hər keçən gün daha da ucqar nöqtələrə yayılmağa başladığını və tədbir görmək üçün vaxtlarının az qaldığını bildirdi. İkinci elçinin də eyni xəbərlə gəlməsi baronun işin ciddiliyini dərk etməsinə səbəb oldu.</p>
-              <p>İlk olaraq, mühasirəyə alınma təhlükəsindən qorumak üçün qalanın anbarlarını ərzaqla doldurması əmr edildi. Daha sonra qalaya bütün giriş-çıxışlar qadağan edildi, tacirlər və muzdlu əsgərlər göndərildi, qala zindanındakı məhbuslar azad edildi, bəzi hallarda isə edam edildi.</p>
-              <p>Və çox keçmədən Qara Ölüm artıq qala ətrafındaki kəndlərə də gəlib çatdı. Qalada xaos hökm sürürdü. Hər kəs baronun ağlını itirdiyini düşünürdü. Anna ailəsinin yanına getmək üçün hazırlaşdı, amma baron ona icazə vermədi və onu otaq həbsinə aldı.</p>
+              <img src="assets/chapter-07.png" alt="Fəsil 7" class="chapter-image">
+              <p>Həmin gecə Romadan gələn elçi, Qara Ölümün krallığın bütün cənubuna yayıldığını, hər keçən gün daha da ucqar nöqtələrə yayılmağa başladığını və milyonlarla insanı öldürdüyünü bildirdi.</p>
+              <p>İlk olaraq, mühasirəyə alınma təhlükəsindən qorumak üçün qalanın anbarlarını ərzaqla doldurması əmr edildi. Daha sonra qalaya bütün giriş-çıxışlar qadağan edildi. Heç kim daxil olmaya, heç kim çıxa bilməzdi.</p>
+              <p>Və çox keçmədən Qara Ölüm artıq qala ətrafındakı kəndlərə də gəlib çatdı. Qalada xaos hökm sürürdü. Hər kəs baronun ağlını itirdiyini düşünürdü. Anna isə pəncərədən ölüm səmasını seyr edirdi.</p>
             </div>
 
             <div class="chapter-box">
               <h3>Fəsil 8: İnkvizisiya</h3>
-              <p>Anna qaladan qaçdıqdan sonra baron və adamları onun izinə düşdülər. Anna, gözlənilmədən bir kilsəyə sığınır. Bu kilsə İnkvizisiyanın vahiməli bir yeridir: cadugərliklə, pagançılıqla, şeytana satılmışlıqla günahlandırılan insanların işgəncə gördüyü bir qaranlıq məkan.</p>
-              <p>O dövrdə insanlar vəbanın yaranması və yayılması ilə bağlı çoxlu yanlış fikirlər söyləyirdilər. Onlardan biri də bunun paganlıq və şeytana satılma ilə bağlı olduğudur. Bu inancın təsiri ilə çoxsaylı insanlar işgəncəyə məruz qalırdı. Anna da burada qaranlıq bir çovulun içərisinə düşür.</p>
-              <p>Rahiblər onu arxa tərəfə yerləşdirilmiş, üç qadının olduğu bir otağa həbs edir. O, burada ölümü gözləyir, çünki inkvizisiya məhkəmələri ona qarşı ciddi bir dəlil yaratmağa hazır idi. Amma bir zəlzələ baş verir. Kilsə sarsılır və divarlar çatlayır. Anna bu fürsətdən istifadə edərək qaçır.</p>
+              <img src="assets/chapter-08.png" alt="Fəsil 8" class="chapter-image">
+              <p>Anna qaladan qaçdıqdan sonra baron və adamları onun izinə düşdülər. Anna, gözlənilmədən bir kilsəyə sığınır. Bu kilsə İnkvizisiyanın vahiməli bir yeridir: cəzaların yeridir.</p>
+              <p>O dövrdə insanlar vəbanın yaranması və yayılması ilə bağlı çoxlu yanlış fikirlər söyləyirdilər. Onlardan biri də bunun paganlıq və şeytana satılma ilə bağlı olduğu idi. Anna sadəcə sənətçi qız idi, amma cəzalandırılmağa hazır idi.</p>
+              <p>Rahiblər onu arxa tərəfə yerləşdirilmiş, üç qadının olduğu bir otağa həbs edir. O, burada ölümü gözləyir, çünki inkvizisiya məhkəmələri ona qarşı ciddi iddiaçılıq edirdi.</p>
             </div>
 
             <div class="chapter-box">
               <h3>Fəsil 9: Podovaya qayıdış</h3>
-              <p>Anna kilsədən qaçdıqdan sonra, yoldaşı Malik ilə birlikdə Podovaya doğru yola düşür. Bu, sadəcə bir qayıdış deyil; bir dirçəliş, bir qurtuluş yoludur. Yolda çoxlu çətinliklərlə qarşılaşırlar: xəstələr, cəsədlər, qaranlıq küçələr, ağrılı xatirələr.</p>
-              <p>Ayrı-ayrı insanlar onlara yaxınlaşır, qısa bir həvəs və ümidsizliklə müraciət edirlər. Anna, ailəsinin itirilməsi və bu xaosun içində birisinin günahkarlığına görə dözüm göstərə bilmir. Lakin Malik ona ümidini itirməməsini xatırladır.</p>
-              <p>Nəhayət Anna öz məhəlləsinə çatır, amma evləri boşdur. Anası və atası yoxdu. Qonşu ona bildirib ki, valideynləri vəba həkimləri tərəfindən aparılıb. Bu xəbər Annanın içindəki son ümidin də sönməsinə səbəb olur.</p>
+              <img src="assets/chapter-09.png" alt="Fəsil 9" class="chapter-image">
+              <p>Anna kilsədən qaçdıqdan sonra, yoldaşı Malik ilə birlikdə Podovaya doğru yola düşür. Bu, sadəcə bir qayıdış deyil; bir dirçəliş, bir qurtuluş yoludur. Yolda onları nə gözləyir, bilinən deyil.</p>
+              <p>Ayrı-ayrı insanlar onlara yaxınlaşır, qısa bir həvəs və ümidsizliklə müraciət edirlər. Anna, ailəsinin itirilməsi və bu xaosun içində birisinin günahkarlığını hiss edən bir insandır.</p>
+              <p>Nəhayət Anna öz məhəlləsinə çatır, amma evləri boşdur. Anası və atası yoxdu. Qonşu ona bildirib ki, valideynləri vəba həkimləri tərəfindən aparılıb. Bu xəbər Annanın ruhunu tamamilə taqətdən salıb.</p>
             </div>
 
             <div class="chapter-box">
-              <h3>Fəsil 10: “Ölüm Adası” Poveglia</h3>
-              <p>Anna və Malik, axtarışda sahilə çatırlar. Burada bir neçə xəstə gəmisi dayanır. Axtardığı adamlar isə sanki yer üzündən silinmişdir. Nə qədər axtarsalar da, iz tapmırlar. Son çarə olaraq, Malik “Ölüm adası” Poveglia adasına getməyi qərar verir.</p>
-              <p>Gecə düşəndə, sahildən kiçik və köhnə bir qayıqla adaya yollandılar. Adanın ətrafında yağ lampalı qayıqlarla patrul gəzən əsgərlər var. Bu iş çətindir, çünki adaya gətirilən xəstələrin qaçmaması üçün ətrafda daim patrul aparılır.</p>
-              <p>Adaya gündə yüzlərlə, bəzən minlərlə xəstə gətirilir. Onların arasında səhv diaqnoz qoyulmuş sağlam insanlar da vardır. Vəba həkimləri iki-üç gündən bir adanı gəzərək ölənləri və ölməkdə olanları yandırırlar. Bu dəhşət içində sonunda Anna və Malik valideynlərini tapır. Onlar sağlamdırlar — ən azından o, görünür.</p>
+              <h3>Fəsil 10: "Ölüm Adası" Poveglia</h3>
+              <img src="assets/chapter-10.png" alt="Fəsil 10" class="chapter-image">
+              <p>Anna və Malik, axtarışda sahilə çatırlar. Burada bir neçə xəstə gəmisi dayanır. Axtardığı adamlar isə sanki yer üzündən silinmişdir. Nə qədər axtarsalar da heç bir iz tapıla bilmir.</p>
+              <p>Gecə düşəndə, sahildən kiçik və köhnə bir qayıqla adaya yollandılar. Adanın ətrafında yağ lampalı qayıqlarla patrul gəzən əsgərlər var. Bu iş çətindir, amma onlar cəsarətli insanlardır.</p>
+              <p>Adaya gündə yüzlərlə, bəzən minlərlə xəstə gətirilir. Onların arasında səhv diaqnoz qoyulmuş sağlam insanlar da vardır. Vəba həkimləri iki-üç gündən bir cesədləri dənizə atırlar.</p>
             </div>
 
             <div class="chapter-box">
               <h3>Fəsil 11: Ümidsiz gözləyiş</h3>
-              <p>Anna və Malik, valideynlərini adadan çıxarmağa çalışırlar. Lakin bu, sadəcə bir qaçış deyil; bu, ölümün yaxın olduğu, insanın ruhunun tam sarsıldığı bir kritiktir. Xəstə insanlar, qaranlıq məkanlar, ağrı, panik və sürətli çaxnaşma içində hər şey bir-birinə qarışır.</p>
-              <p>Bu zaman bir xəstə, ailəsindən birinin cəsədini yandırdığı üçün vəba həkimlərindən birini vurur. Adaya düşən çaxnaşma hamını bir-birinə vurur. Xəstələr qaçaraq Annanın gizləndiyi yerə tərəf gəlirlər. Anna ne edəcəyini bilmir. Xəstə kütləsi onu tapdalayır və keçir. Sümükləri əzilmiş, başına zərbə dəymişdir.</p>
-              <p>Anna yüzlərlə xəstənin arasında qalır, ölü və xəstə bədənlərin arasında qalıb. Hər şey bitmiş görünür. Lakin romanın sonu burada bitmir — burada insanın ruhu, azadlıq arzusu və mübarizə gücü daha da parlaq görünür. Anna bir dəhşət içində, amma azadlığa doğru bir son yolunu tapmağa çalışır.</p>
+              <img src="assets/chapter-11.png" alt="Fəsil 11" class="chapter-image">
+              <p>Anna və Malik, valideynlərini adadan çıxarmağa çalışırlar. Lakin bu, sadəcə bir qaçış deyil; bu, ölümün yaxın olduğu, insanın ruhunun tam sarsıldığı bir kəfərdir.</p>
+              <p>Bu zaman bir xəstə, ailəsindən birinin cəsədini yandırdığı üçün vəba həkimlərindən birini vurur. Adaya düşən çaxnaşma hamını bir-birinə vurur. Xəstələr və əsgərlər ölüm döyüşəməsi verir.</p>
+              <p>Anna yüzlərlə xəstənin arasında qalır, ölü və xəstə bədənlərin arasında qalıb. Hər şey bitmiş görünür. Lakin romanın sonu burada bitmir — burada insanın ruhunun zəfəri daha güclüdür.</p>
             </div>
           </div>
         </div>
