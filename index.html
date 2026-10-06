@@ -81,10 +81,39 @@
       .contact { display: inline-flex; align-items: center; gap: 10px; margin-top: 10px; padding: 10px 18px; text-decoration: none; border: 1px solid var(--line); background: rgba(19, 23, 18, 0.7); transition: all 0.3s; }
       .contact:hover { border-color: var(--olive-bright); }
       .chapter-content { display: grid; gap: 22px; }
-      .chapter-box { background: rgba(11, 15, 11, 0.9); border: 1px solid var(--line); padding: 24px 22px; }
+      .chapter-box {
+        background: linear-gradient(180deg, rgba(11,15,11,0.92), rgba(14,18,14,0.98));
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 24px 22px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+        transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      }
+      .chapter-box:hover {
+        transform: translateY(-5px);
+        border-color: rgba(129, 150, 122, 0.8);
+        box-shadow: 0 18px 36px rgba(0,0,0,0.26);
+      }
       .chapter-box h3 { margin: 0 0 16px; font-size: clamp(24px, 3vw, 32px); }
       .chapter-box p { margin: 0 0 1em; }
-      .chapter-image { width: 100%; max-width: 400px; height: auto; margin: 16px 0; border: 1px solid var(--line); display: block; }
+      .chapter-image {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        margin: 16px 0;
+        display: block;
+        border: 1px solid rgba(168, 159, 134, 0.35);
+        border-radius: 12px;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.24);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+        background: rgba(10,13,10,0.5);
+      }
+      .chapter-image:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 18px 32px rgba(0,0,0,0.38);
+        border-color: rgba(129, 150, 122, 0.9);
+        filter: brightness(1.04);
+      }
       footer { padding: 36px 20px 60px; text-align: center; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; font-size: 11px; }
       @media (max-width: 640px) { nav a { letter-spacing: 0.1em; } .buttons { flex-direction: column; } .button { width: 100%; } }
     </style>
