@@ -895,5 +895,34 @@ MÜHÜM QEYD :O zamanlar xəstəliyin dahada yayılmasının qarşısını almaq
         });
       });
     </script>
+    
+<audio id="bg-music" loop preload="none">
+  <source src="assets/canticum-tenebrae-03.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-toggle" type="button" style="position:fixed;bottom:20px;right:20px;z-index:9999;padding:12px 16px;border:1px solid #9c8152;border-radius:30px;background:#171914;color:#e7d2a1;font-size:14px;">
+  ♫ Musiqini aç
+</button>
+
+<script>
+  const music = document.getElementById('bg-music');
+  const musicButton = document.getElementById('music-toggle');
+
+  music.volume = 0.25;
+
+  musicButton.addEventListener('click', async () => {
+    if (music.paused) {
+      try {
+        await music.play();
+        musicButton.textContent = '♫ Musiqini söndür';
+      } catch (error) {
+        musicButton.textContent = 'Musiqi açılmadı — yenidən yoxla';
+      }
+    } else {
+      music.pause();
+      musicButton.textContent = '♫ Musiqini aç';
+    }
+  });
+</script>
   </body>
 </html>
