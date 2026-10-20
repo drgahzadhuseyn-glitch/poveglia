@@ -900,7 +900,7 @@ MÜHÜM QEYD :O zamanlar xəstəliyin dahada yayılmasının qarşısını almaq
   <source src="assets/canticum-tenebrae-03.mp3" type="audio/mpeg">
 </audio>
 
-<button id="music-toggle" type="button" style="position:fixed;top:20px;right:20px;z-index:9999;padding:12px 16px;border:1px solid #9c8152;border-radius:30px;background:#171914;color:#e7d2a1;font-size:14px;">
+<button id="music-toggle" type="button" style="position:fixed;bottom:20px;right:20px;z-index:9999;padding:12px 16px;border:1px solid #9c8152;border-radius:30px;background:#171914;color:#e7d2a1;font-size:14px;">
   ♫ Musiqini aç
 </button>
 
@@ -909,6 +909,11 @@ MÜHÜM QEYD :O zamanlar xəstəliyin dahada yayılmasının qarşısını almaq
   const musicButton = document.getElementById('music-toggle');
 
   music.volume = 0.25;
+  window.addEventListener('load', () => {
+  music.play().catch(() => {
+    musicButton.textContent = '♫ Musiqini aç';
+  });
+});
 
   musicButton.addEventListener('click', async () => {
     if (music.paused) {
