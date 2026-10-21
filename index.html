@@ -366,25 +366,24 @@
         border-bottom: 1px solid var(--line);
       }
 
-      /* HAQQINDA BÖLMƏSİ ÜÇÜN ŞƏKLİ BÜTÜNÜYLƏ AÇIQ VƏ TƏMİZ GÖSTƏRƏN STİL */
+      /* HAQQINDA BÖLMƏSİ - ŞƏKLİN DETALLARI KƏSİLMƏMƏSİ ÜÇÜN TƏNZİMLƏNDİ */
       #haqqinda {
         position: relative;
         background-image: url('assets/about background.png');
-        background-size: cover;
+        background-size: 100% 100%; /* Şəklin bütün detallarının (bitkilər, həkim, şəhər) tam görünməsi üçün */
         background-position: center;
         background-repeat: no-repeat;
         border-bottom: 1px solid var(--line);
         padding: 100px 0;
       }
 
-      /* Bütün donuq örtüklər ləğv edildi, yazılar tam mərkəzə daraldıldı */
       #haqqinda .wrap {
         position: relative;
         z-index: 2;
-        max-width: 540px; 
+        max-width: 520px; /* Yazılar tam mərkəzi boşluqda qalır, kənar detalları örtmür */
         margin: 0 auto;
         padding: 0 20px;
-        background: transparent; /* Fon tamamilə şəffafdır */
+        background: transparent;
       }
 
       h2 {
@@ -450,7 +449,7 @@
         margin: 36px 0;
         padding: 22px 24px 18px 24px;
         border-left: 4px solid var(--blood);
-        background: rgba(0, 0, 0, 0.3); /* Yüngül sitat stili */
+        background: rgba(0, 0, 0, 0.3);
         color: var(--text);
         font-style: italic;
         font-size: clamp(20px, 2.5vw, 28px);
