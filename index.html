@@ -6,7 +6,7 @@
     <title>İnsanlar, göz yaşları və vəba</title>
     <meta name="description" content="İnsanlar, göz yaşları və vəba — orta əsr Avropasında Qara Ölümün kölgəsində keçən qaranlıq tarixi roman.">
     
-    <!-- EPİK TARIXİ ŞRİFTLƏR -->
+    <!-- EPİK TARİXİ ŞRİFTLƏR -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,600&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
         --line: rgba(168, 159, 134, 0.25);
         --text: #e7dcc1;
         --muted: #c9bba1;
-        --gold: #b89a6f;
+        --gold: #d8b473;
         --olive: #5b6d52;
         --olive-bright: #81967a;
         --blood: #7d2a2a;
@@ -124,7 +124,7 @@
         justify-content: center;
       }
 
-      /* ƏSƏRİN EPİK QİZİLİ BAŞLIĞI */
+      /* ƏSƏRİN BÜTÜN SÖZLƏRİ EYNİ QİZİLİ RƏNGDƏ OLAN BAŞLIĞI */
       h1 {
         margin: 0;
         font-family: 'Cinzel', serif;
@@ -133,10 +133,8 @@
         letter-spacing: 0.12em;
         text-transform: uppercase;
         font-weight: 800;
-        background: linear-gradient(180deg, #fff2d6 0%, #d8b473 45%, #9e7a43 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0px 4px 18px rgba(0, 0, 0, 0.9));
+        color: #e5c17c;
+        text-shadow: 0 0 20px rgba(229, 193, 124, 0.25), 0 4px 18px rgba(0, 0, 0, 0.95);
       }
 
       h1::after {
@@ -145,7 +143,7 @@
         width: min(85%, 480px);
         height: 1px;
         margin: 32px auto 36px;
-        background: linear-gradient(90deg, transparent, rgba(216, 180, 115, 0.65), transparent);
+        background: linear-gradient(90deg, transparent, rgba(229, 193, 124, 0.65), transparent);
       }
 
       .buttons {
@@ -195,30 +193,31 @@
           );
       }
 
-      /* MENYU DİZAYNI VƏ QİZİLİ ROMBLAR */
+      /* GENİŞLƏNDİRİLMİŞ YUXARI NAVİQASİYA PANELSİ VƏ DİZAYNI */
       .elegant-nav {
         position: relative;
         z-index: 30;
         width: 100%;
-        padding: 24px 20px;
-        background: rgba(5, 8, 6, 0.92);
+        padding: 48px 20px 42px; /* Paneli aşağıya doğru genişləndirən məsafə */
+        background: rgba(5, 8, 6, 0.96);
         backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--line);
       }
 
       .elegant-nav-inner {
-        max-width: 1100px;
+        max-width: 900px;
         margin: 0 auto;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
       }
 
       .elegant-nav-top {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 22px;
-        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
       }
 
       .elegant-nav a {
@@ -230,6 +229,7 @@
         text-decoration: none;
         text-transform: uppercase;
         transition: all 0.3s ease;
+        text-align: center;
       }
 
       .elegant-nav a:hover {
@@ -237,7 +237,19 @@
         text-shadow: 0 0 10px rgba(216, 180, 115, 0.5);
       }
 
-      /* Şəkildəki Qızılı Romb İkonu və Xətləri */
+      /* MÜƏLLİFDƏN SÖZÜ DİGƏRLƏRİNDƏN DAHA BÖYÜK */
+      .elegant-nav-bottom {
+        margin-top: 22px;
+        text-align: center;
+      }
+
+      .elegant-nav-bottom a {
+        font-size: 20px;
+        letter-spacing: 0.32em;
+        color: #e2ceaa;
+      }
+
+      /* YANINDA İNCƏ XƏTLƏR OLAN ROMB İKONLARI */
       .nav-diamond {
         display: inline-flex;
         align-items: center;
@@ -267,6 +279,34 @@
         transform: rotate(45deg);
         background: rgba(184, 154, 111, 0.15);
         box-shadow: 0 0 6px rgba(184, 154, 111, 0.3);
+      }
+
+      /* "MÜƏLLİFDƏN" SÖZÜNÜN ALTINDAKI BÖYÜK QİZİLİ ROMB VƏ XƏTT */
+      .elegant-nav-decoration {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        max-width: 650px;
+        margin: 28px auto 0;
+      }
+
+      .elegant-nav-decoration span {
+        height: 1px;
+        flex: 1;
+        background: linear-gradient(90deg, transparent, #b89a6f, transparent);
+      }
+
+      .elegant-nav-decoration i {
+        width: 12px;
+        height: 12px;
+        display: block;
+        border: 1px solid #d8b473;
+        transform: rotate(45deg);
+        background: rgba(216, 180, 115, 0.2);
+        box-shadow: 0 0 8px rgba(216, 180, 115, 0.4);
+        flex-shrink: 0;
       }
 
       main {
@@ -467,26 +507,31 @@
         }
 
         .elegant-nav {
-          padding: 16px 10px;
+          padding: 28px 10px 24px;
         }
 
         .elegant-nav-top {
-          gap: 10px;
+          gap: 8px;
         }
 
         .elegant-nav a {
-          font-size: 12px;
-          letter-spacing: 0.12em;
+          font-size: 11px;
+          letter-spacing: 0.1em;
+        }
+
+        .elegant-nav-bottom a {
+          font-size: 14px;
+          letter-spacing: 0.2em;
         }
 
         .nav-diamond::before,
         .nav-diamond::after {
-          width: 6px;
+          width: 4px;
         }
 
         .nav-diamond span {
-          width: 6px;
-          height: 6px;
+          width: 5px;
+          height: 5px;
         }
 
         .chapter-toggle {
@@ -508,15 +553,20 @@
           
           <div class="nav-diamond"><span></span></div>
           
-          <a href="#personajlar">OBRAZLAR</a>
-          
-          <div class="nav-diamond"><span></span></div>
-          
           <a href="#fasil">FƏSİLLƏR</a>
           
           <div class="nav-diamond"><span></span></div>
           
+          <a href="#personajlar">OBRAZLAR</a>
+        </div>
+
+        <div class="elegant-nav-bottom">
           <a href="#muellifden">MÜƏLLİFDƏN</a>
+        </div>
+
+        <!-- MÜƏLLİFDƏN SÖZÜNÜN ALTINDAKI QİZİLİ ROMB VƏ XƏTT -->
+        <div class="elegant-nav-decoration">
+          <span></span><i></i><span></span>
         </div>
       </div>
     </nav>
@@ -655,7 +705,7 @@
                     ​Lakin heç bir şey planlaşdırıldığı kimi getmədi, çünki onu tanıyan heç kimin Federikonun bu qədər tez yaşlanıb gücdən düşəcəyi və ölüm yatağında olacağı ağlına belə gəlmirdi.Əsgərlər əliboş qayıtmaqları halında kin və tərsliyi ilə məhşur olan Baronun onlara verəcəyi cəzanı çox yaxşı bilirdilər. Onların qulaqlarında Baronun sərt sözləri səslənirdi: "Ya Federikonu, ya da ondan daha yaxşı bir rəssamı bura gətirəcəksiniz, əks halda qala zindanının ac siçovulları sizi gözləyir."
                     ​Federikonun İtaliyanın ən bacarıqlı rəssamlarından olduğunu bilən əsgərlər, onun son günlərini yaşadığını görüb qorxuya düşdülər. Xülasə Federikonun qalaya gedə bilməyəcəyini anlayandan sonra əsgərlər ona sual vermək istəyirdilər. Amma birazda qorxurdularki yaşlı Federiko əsəbləşər və onlara yardım etmədən qovar.Nəhayət içlərindən biri cəsarət edib Federikodan özü kimi vəya özündən daha bacarıqlı rəssam olub olmadığını soruşdu.Yaşlı Federikonunsa cavabı çox qısa idi.O qürurla : “tələbəm Anna”.
                     ​Anna həqiqətən də rəssamlıqda bacarıqlı idi, lakin hələ öz potensialını tam kəşf etməmişdi. Üç il əvvəl Federiko bir il boyunca ona fresk sənətini öyrətmişdi və tələbəsinin kiçik yaşda belə gözəl işlər gördüyünü bilirdi. Buna görə də Annanın istedadına güvənirdi.
-                    ​İndi qərar Annanın əlində idi. O, valideynlərinin onun qalaya getməsinə razı olmayacaqlarını bilirdi. Amma digər tərəfdən, həyatı boyu gördüyü səfalətdən qurtulmaq istəyirdi. Xəyallarında hər zaman gözəl ipək geyimlər, dadlı yeməklər, isti bir ev və "xoşbəxt həyat" canlandırırdı. Anna çox düşündükdən sonra evdən xəbərsiz yola çıxmağa qərar verdi. Onun tək narahatlığı, artıq yaşlı olan valideynlərinin (o doğulanda anasının 42, atasının 55 yaşı vardı) onu tək buraxdığını düşünüb kədərlənmələri və aclıqdan ölmələri idi. Amma gözlənilməzden bu çətinlikdə uzun çəkmədiki hall olundu.Baronun əsgərləri Annanın əməkhaqqının 3 də 1 ni öncədən ödəməyə razı oldular və Anna da bu pulu götürüb evə yollandı. Bir kağıza vəziyyəti izah edən məktub yazdı , yanınada zəruri ethiyaclarını ən azı 1 il rahatlığla qarşılayabiləcək olan öncadən aldığı əməkhaqqının hamsını qoydu və yol əşyalarını topladı (əcəmi dəyişək 1 nisbətən daha az yamağlı geyim, saç darağıvə bir iki başqa şəxsi əşaiyaları və Federikoyla son bir dəfə vidalaşarkən müəliiminin ona xatirə olarağ verdiyi fırçaları) İkisidə yaxşı bilirdiki Anna geri döndüyündə artığ istəsələr belə yenidən bir araya gələ bilməyəcəklər.Federiko onu öpdü bağrına basdı,gələcəkdəki həyatı üçün tövsiyələr verdi və son sözüdə "Qızım heçvaxt nə olursa olsun ümidini itirmə və mübarizə aparmağdan əl çəkmə! Mən sənə inanıram " oldu .6 gündüz 7 gecə İlk günlər düzənliklərlə irəliləyən araba Trentonun o tayında dağ yollarına çatanda yavaşladı. Qarşıda Alpi Venostenin soyuq yamacları görünürdü.Və nəhayət qalaya çatdılar. (Əsərin qısa məzmunu olduğu üçün buraları qısa kəsirəm)
+                    ​İndi qərar Annanın əlində idi. O, valideynlərinin onun qalaya getməsinə razı olmayacaqlarını bilirdi. Amma digər tərəfdən, həyatı boyu gördüyü səfalətdən qurtulmaq istəyirdi. Xəyallarında hər zaman gözəl ipək geyimlər, dadlı yeməklər, isti bir ev və "xoşbəxt həyat" canlandırırdı. Anna çox düşündükdən sonra evdən xəbərsiz yola çıxmağa qərar verdi. Onun tək narahatlığı, artıq yaşlı olan valideynlərinin (o doğulanda anasının 42, atasının 55 yaşı vardı) onu tək buraxdığını düşünüb kədərlənmələri və aclıqdan ölmələri idi. Amma gözlənilməzdən bu çətinlikdə uzun çəkmədiki hall olundu.Baronun əsgərləri Annanın əməkhaqqının 3 də 1 ni öncədən ödəməyə razı oldular və Anna da bu pulu götürüb evə yollandı. Bir kağıza vəziyyəti izah edən məktub yazdı , yanınada zəruri ethiyaclarını ən azı 1 il rahatlığla qarşılayabiləcək olan öncadən aldığı əməkhaqqının hamsını qoydu və yol əşyalarını topladı (əcəmi dəyişək 1 nisbətən daha az yamağlı geyim, saç darağıvə bir iki başqa şəxsi əşaiyaları və Federikoyla son bir dəfə vidalaşarkən müəliiminin ona xatirə olarağ verdiyi fırçaları) İkisidə yaxşı bilirdiki Anna geri döndüyündə artığ istəsələr belə yenidən bir araya gələ bilməyəcəklər.Federiko onu öpdü bağrına basdı,gələcəkdəki həyatı üçün tövsiyələr verdi və son sözüdə "Qızım heçvaxt nə olursa olsun ümidini itirmə və mübarizə aparmağdan əl çəkmə! Mən sənə inanıram " oldu .6 gündüz 7 gecə İlk günlər düzənliklərlə irəliləyən araba Trentonun o tayında dağ yollarına çatanda yavaşladı. Qarşıda Alpi Venostenin soyuq yamacları görünürdü.Və nəhayət qalaya çatdılar. (Əsərin qısa məzmunu olduğu üçün buraları qısa kəsirəm)
                   </p>
                 </div>
               </div>
@@ -678,7 +728,7 @@
                 <div class="chapter-copy">
                   <p>
                     ​Qala qapısında qonağını qarşılamağa gələn Signore Jakkenzo, yaşlı və beli bükülmüş Federikonun yerinə faytondan zərif və saf gözəlliyi olan Annanı görəndə özünü itirdi. Bu, bir möcüzə idi! Baronu ildırım vurmuşa döndü.Bu qız gəncliyində aşiq olduğu lakin ona qismət olmayan sevdiyi qıza çox bənzəyirdi.Baron bu həyatda bu yaşına qədər demək olarki istədiyi hərşeyi əldə etmişdi.Lakin indi mal mülk ad san bu həyatda əldə etdiyi hərşey ona önəmsiz gəlirdi çünki qarşısında bu həyatda əldə edə bilmədiyi bir şey dururdu.Əsgərlərin hər şeyi izah etməsindən sonra belə, baronun ağlına nə ölüm yatağında olan sənətinə heyran olduğu rəssam, nə də kilsənin freskləri gəlirdi.Kim bilir bəlkə Tanrını belə unutmuşdu.
-                    ​Baronun nakam sevgisi yenidən qəlbində cücərdi. Amma həyat ona yeni çətinliklər yaratmışdı. Yaşı əlliyə yaxınlaşmışdı və əsilzadə ailəsindən olan bir xanımla evli idi. Anna isə sadəcə qovuşa bilmədiyi keçmişdəki sevgilisinə bənzəyirdi, o deyildi. Amma görünən o idi ki, Baron bu səthi bənzərliklə yarım yamalaqda olsa illərdir çəkdiyi eşq əzabını dindirməyə çalışacaqdı. Baron Annaya daha yaxın olmaq və aralarında səmimiyyət yaratmaq üçün kilsə fresklərindən əvvəl özünün kətan üzərində yağlı boya portretini çəkməsini istədi. Əslində bu Baronun yaxşıca düşünülmüş bir hiləsi idi.Məqsədi saatlarla üzbə - üz oturub,nakam sevgisini ürəyində cücərdən Annanın gözlərinin içinə baxmaq və bacara bilsə bu saf qızı yoldan çıxarmaq idi.Anna da bütün bu məkrdən xəbərsiz böyük həvəslə işə başladı.
+                    ​Baronun nakam sevgisi yenidən qəlbində cücərdi. Amma həyat ona yeni çətinliklər yaratmışdı. Yaşı əlliyə yaxınlaşmışdı və əsilzadə ailəsindən olan bir xanımla evli idi. Anna isə sadəcə qovuşa bilmədiyi keçmişdəki sevgilisinə bənzəyirdi, o deyildi. Amma görünən o idi ki, Baron bu səthi bənzərliklə yarım yamalaqda olsa illərdir çəkdiyi eşq əzabını dindirməyə çalışacaqdı. Baron Annaya daha yaxın olmaq və aralarında səmimiyyət yaratmaq üçün kilsə fresklərindən əvvəl özünün kətan üzərində yağlı boya portretini çəkməsini istədi. Əslində bu Baronun yaxşıca düşünülmüş bir hiləsi idi.Məqsədi saatlarla üzbə - üz oturub,nakam sevgisini ürəyində cücərdən Annanın gözlərinin içine baxmaq və bacara bilsə bu saf qızı yoldan çıxarmaq idi.Anna da bütün bu məkrdən xəbərsiz böyük həvəslə işə başladı.
                   </p>
                 </div>
               </div>
