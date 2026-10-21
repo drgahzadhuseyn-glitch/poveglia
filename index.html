@@ -366,7 +366,7 @@
         border-bottom: 1px solid var(--line);
       }
 
-      /* HAQQINDA BÖLMƏSİ - NORMAL PROPORSİYA VƏ KƏSİLMƏYƏN ARXA FON */
+      /* HAQQINDA BÖLMƏSİ */
       #haqqinda {
         position: relative;
         background-image: url('assets/about background.png');
@@ -374,7 +374,7 @@
         background-position: center;
         background-repeat: no-repeat;
         border-bottom: 1px solid var(--line);
-        padding: 60px 0; /* Padding azaldıldı ki şəkil vertikal olaraq uzanmasın */
+        padding: 60px 0;
       }
 
       #haqqinda .wrap {
@@ -394,23 +394,41 @@
         text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 5px rgba(0,0,0,0.8);
       }
 
-      /* BİRİNCİ ABSAZ - SƏLİQƏLİ ŞRİFT VƏ VƏBA HƏKİMİNİN ÜZÜNÜ AÇAN STRUKTUR */
+      /* BİRİNCİ ABSAZ - XƏTT SÖZLƏRƏ YAXINLAŞDIRILDI (padding-left: 6px) */
       .lead {
-        font-size: clamp(15px, 1.6vw, 19px); /* Şrift kiçildildi */
+        font-size: clamp(15px, 1.6vw, 19px);
         color: var(--text);
         line-height: 1.45;
         margin: 0 0 20px;
-        padding-left: 14px;
+        padding-left: 6px; /* Xətt mətne yaxınlaşdırıldı */
         border-left: 3px solid var(--olive-bright);
         text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 5px rgba(0,0,0,0.8);
-        max-width: 72%; /* Mətnin eni sıxlaşdırıldı ki, sağdakı vəba həkiminin üzünü qapatmasın */
+        max-width: 72%;
       }
 
       p {
         margin: 0 0 1em;
         color: var(--text);
-        font-size: 17px; /* Digər yazılar olduğu kimi saxlanıldı */
+        font-size: 17px;
         text-shadow: 0 2px 8px rgba(0,0,0,1), 0 0 4px rgba(0,0,0,0.8);
+      }
+
+      /* İKİNCİ VƏ ÜÇÜNCÜ ABSAZLAR İÇİN SOLLAR ORTAYA ÇƏKİLDİ (NAXIŞIN ÜSTÜNƏ DÜŞMƏSİN) */
+      .shifted-text {
+        margin-left: 14px; /* Sağa/ortaya doğru çəkildi */
+        max-width: 90%;
+      }
+
+      /* SİTAT BÖLMƏSİ - QIRMIZI XƏTT SÖZLƏRƏ YAXINLAŞDIRILDI (padding-left: 6px) */
+      blockquote {
+        margin: 36px 0;
+        padding: 10px 14px 10px 6px; /* Sol boşluq 6px edildi */
+        border-left: 4px solid var(--blood);
+        background: rgba(0, 0, 0, 0.3);
+        color: var(--text);
+        font-style: italic;
+        font-size: clamp(20px, 2.5vw, 28px);
+        text-shadow: 0 2px 10px rgba(0,0,0,1);
       }
 
       .grid {
@@ -445,17 +463,6 @@
         letter-spacing: 0.18em;
         font-size: 11px;
         margin-bottom: 8px;
-      }
-
-      blockquote {
-        margin: 36px 0;
-        padding: 22px 24px 18px 24px;
-        border-left: 4px solid var(--blood);
-        background: rgba(0, 0, 0, 0.3);
-        color: var(--text);
-        font-style: italic;
-        font-size: clamp(20px, 2.5vw, 28px);
-        text-shadow: 0 2px 10px rgba(0,0,0,1);
       }
 
       .chapter-list {
@@ -620,7 +627,11 @@
         }
 
         .lead {
-          max-width: 70%; /* Mobil ekranlarda da həkimin maskası açıq qalır */
+          max-width: 70%;
+        }
+
+        .shifted-text {
+          margin-left: 10px;
         }
       }    
     </style>
@@ -687,11 +698,11 @@
             “İnsanlar, göz yaşları və vəba” — XIV əsr orta əsrlər Avropasında, bəşəriyyəti cənginə alan Böyük Vəba epidemiyasının amansız günlərində cərəyan edən dramatik tarixi romandır.
           </p>
 
-          <p>
-            Romanın ruhu orta əsr Avropasının məğlubiyyət, qorxu və inam atmosferinə dayanır.Əsərdə tale, obrazları vəbanın dəhşəti və insanın öz iç dünyasında itirdiyi yolda birləşdirir.
+          <p class="shifted-text">
+            Romanın ruhu orta əsr Avropasının məğlubiyyət, qorxu və inam atmosferinə dayanır.Əsərdə tale, obrazları vəbanın dəhşəti və insanın öz iç dünyasında itirdiyi yolu birləşdirir.
           </p>
 
-          <p>
+          <p class="shifted-text">
             Roman, yalnız bir qurbanın deyil, bir cəmiyyətin dəhşətini əks etdirir.
           </p>
 
