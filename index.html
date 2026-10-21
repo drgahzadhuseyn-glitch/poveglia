@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>İnsanlar, göz yaşları və vəba</title>
     <meta name="description" content="İnsanlar, göz yaşları və vəba — orta əsr Avropasında Qara Ölümün kölgəsində keçən qaranlıq tarixi roman.">
+    
+    <!-- EPİK TARIXİ ŞRİFTLƏR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,600&display=swap" rel="stylesheet">
+
     <style>
       :root {
         --bg: #090d09;
@@ -67,7 +73,7 @@
         isolation: isolate;
       }
 
-            .hero-art {
+      .hero-art {
         position: absolute;
         inset: 0;
         background-image: url("assets/poveglia-bg.jpg");
@@ -118,29 +124,28 @@
         justify-content: center;
       }
 
+      /* ƏSƏRİN EPİK QİZİLİ BAŞLIĞI */
       h1 {
         margin: 0;
-        font-size: clamp(42px, 6.5vw, 76px);
-        line-height: 0.94;
-        letter-spacing: 0.045em;
+        font-family: 'Cinzel', serif;
+        font-size: clamp(38px, 5.8vw, 70px);
+        line-height: 1.25;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        font-weight: 700;
-        text-shadow: 0 4px 22px rgba(0, 0, 0, 0.5);
+        font-weight: 800;
+        background: linear-gradient(180deg, #fff2d6 0%, #d8b473 45%, #9e7a43 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0px 4px 18px rgba(0, 0, 0, 0.9));
       }
 
       h1::after {
         content: "";
         display: block;
-        width: min(82%, 470px);
+        width: min(85%, 480px);
         height: 1px;
-        margin: 28px auto 34px;
-        background:
-          linear-gradient(
-            90deg,
-            transparent,
-            rgba(201, 187, 161, 0.48),
-            transparent
-          );
+        margin: 32px auto 36px;
+        background: linear-gradient(90deg, transparent, rgba(216, 180, 115, 0.65), transparent);
       }
 
       .buttons {
@@ -190,38 +195,78 @@
           );
       }
 
-      nav {
+      /* MENYU DİZAYNI VƏ QİZİLİ ROMBLAR */
+      .elegant-nav {
         position: relative;
         z-index: 30;
-        background: rgba(5, 8, 6, 0.94);
-        backdrop-filter: blur(6px);
+        width: 100%;
+        padding: 24px 20px;
+        background: rgba(5, 8, 6, 0.92);
+        backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--line);
       }
 
-      nav .wrap {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 52px;
-        row-gap: 8px;
-        max-width: 700px;
+      .elegant-nav-inner {
+        max-width: 1100px;
         margin: 0 auto;
-        padding: 20px 20px 22px;
+        display: flex;
+        justify-content: center;
       }
 
-      nav a {
-        position: relative;
+      .elegant-nav-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        flex-wrap: wrap;
+      }
+
+      .elegant-nav a {
+        color: #d8c6a8;
+        font-family: 'Cinzel', 'Cormorant Garamond', serif;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.25em;
         text-decoration: none;
-        color: var(--muted);
         text-transform: uppercase;
-        letter-spacing: 0.2em;
-        font-size: 13px;
-        padding: 10px 10px;
-        text-align: center;
-        transition: color 0.25s ease;
+        transition: all 0.3s ease;
       }
 
-      nav a:hover {
-        color: var(--text);
+      .elegant-nav a:hover {
+        color: #fff0d0;
+        text-shadow: 0 0 10px rgba(216, 180, 115, 0.5);
+      }
+
+      /* Şəkildəki Qızılı Romb İkonu və Xətləri */
+      .nav-diamond {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #b89a6f;
+        user-select: none;
+      }
+
+      .nav-diamond::before,
+      .nav-diamond::after {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #b89a6f);
+      }
+
+      .nav-diamond::after {
+        background: linear-gradient(90deg, #b89a6f, transparent);
+      }
+
+      .nav-diamond span {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border: 1px solid #c9a875;
+        transform: rotate(45deg);
+        background: rgba(184, 154, 111, 0.15);
+        box-shadow: 0 0 6px rgba(184, 154, 111, 0.3);
       }
 
       main {
@@ -236,8 +281,9 @@
 
       h2 {
         margin: 0 0 24px;
+        font-family: 'Cinzel', serif;
         font-size: clamp(30px, 4vw, 44px);
-        letter-spacing: 0.03em;
+        letter-spacing: 0.05em;
       }
 
       .lead {
@@ -276,6 +322,7 @@
 
       .card h3 {
         margin: 0 0 8px;
+        font-family: 'Cinzel', serif;
         font-size: 22px;
       }
 
@@ -419,26 +466,27 @@
           padding: 24px 18px 42px;
         }
 
-        h1 {
-          font-size: clamp(40px, 11vw, 60px);
-          letter-spacing: 0.035em;
+        .elegant-nav {
+          padding: 16px 10px;
         }
 
-        h1::after {
-          width: 74%;
-          margin: 24px auto 30px;
+        .elegant-nav-top {
+          gap: 10px;
         }
 
-        .buttons {
-          width: 100%;
-          flex-direction: column;
-          align-items: center;
+        .elegant-nav a {
+          font-size: 12px;
+          letter-spacing: 0.12em;
         }
 
-        .button {
-          width: auto;
-          min-width: 165px;
-          min-height: 40px;
+        .nav-diamond::before,
+        .nav-diamond::after {
+          width: 6px;
+        }
+
+        .nav-diamond span {
+          width: 6px;
+          height: 6px;
         }
 
         .chapter-toggle {
@@ -449,85 +497,6 @@
           max-width: 100%;
         }
       }    
-
-      /* MENYU DİZAYNI (ROMBSUZ TƏMİZ VERSİYA) */
-
-      .elegant-nav {
-        width: 100%;
-        padding: 54px 5% 38px;
-        box-sizing: border-box;
-        background: transparent;
-      }
-
-      .elegant-nav-inner {
-        width: 100%;
-        max-width: 1450px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .elegant-nav-top {
-        display: flex;
-        justify-content: center;
-        gap: 35px;
-        flex-wrap: wrap;
-      }
-
-      .elegant-nav a {
-        color: #d8c6a8;
-        font-family: "Cormorant Garamond", "Times New Roman", serif;
-        font-size: 30px;
-        font-weight: 400;
-        letter-spacing: 0.30em;
-        line-height: 1.5;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        white-space: nowrap;
-        padding: 0;
-      }
-
-      .elegant-nav a:hover {
-        color: #f2dfb9;
-      }
-
-      .elegant-nav-bottom {
-        display: flex;
-        justify-content: center;
-        margin-top: 35px;
-      }
-
-      .elegant-nav-bottom a {
-        font-size: 29px;
-        letter-spacing: 0.30em;
-      }
-
-      @media (max-width: 640px) {
-        .elegant-nav {
-          padding: 32px 12px 24px;
-        }
-
-        .elegant-nav-top {
-          gap: 15px;
-        }
-
-        .elegant-nav a {
-          font-size: 14px;
-          letter-spacing: 0.15em;
-          white-space: normal;
-        }
-
-        .elegant-nav-bottom {
-          margin-top: 20px;
-        }
-
-        .elegant-nav-bottom a {
-          font-size: 15px;
-          letter-spacing: 0.24em;
-        }
-      }
     </style>
   </head>
 
@@ -536,11 +505,17 @@
       <div class="elegant-nav-inner">
         <div class="elegant-nav-top">
           <a href="#haqqinda">ROMAN</a>
+          
+          <div class="nav-diamond"><span></span></div>
+          
           <a href="#personajlar">OBRAZLAR</a>
+          
+          <div class="nav-diamond"><span></span></div>
+          
           <a href="#fasil">FƏSİLLƏR</a>
-        </div>
-
-        <div class="elegant-nav-bottom">
+          
+          <div class="nav-diamond"><span></span></div>
+          
           <a href="#muellifden">MÜƏLLİFDƏN</a>
         </div>
       </div>
@@ -680,7 +655,7 @@
                     ​Lakin heç bir şey planlaşdırıldığı kimi getmədi, çünki onu tanıyan heç kimin Federikonun bu qədər tez yaşlanıb gücdən düşəcəyi və ölüm yatağında olacağı ağlına belə gəlmirdi.Əsgərlər əliboş qayıtmaqları halında kin və tərsliyi ilə məhşur olan Baronun onlara verəcəyi cəzanı çox yaxşı bilirdilər. Onların qulaqlarında Baronun sərt sözləri səslənirdi: "Ya Federikonu, ya da ondan daha yaxşı bir rəssamı bura gətirəcəksiniz, əks halda qala zindanının ac siçovulları sizi gözləyir."
                     ​Federikonun İtaliyanın ən bacarıqlı rəssamlarından olduğunu bilən əsgərlər, onun son günlərini yaşadığını görüb qorxuya düşdülər. Xülasə Federikonun qalaya gedə bilməyəcəyini anlayandan sonra əsgərlər ona sual vermək istəyirdilər. Amma birazda qorxurdularki yaşlı Federiko əsəbləşər və onlara yardım etmədən qovar.Nəhayət içlərindən biri cəsarət edib Federikodan özü kimi vəya özündən daha bacarıqlı rəssam olub olmadığını soruşdu.Yaşlı Federikonunsa cavabı çox qısa idi.O qürurla : “tələbəm Anna”.
                     ​Anna həqiqətən də rəssamlıqda bacarıqlı idi, lakin hələ öz potensialını tam kəşf etməmişdi. Üç il əvvəl Federiko bir il boyunca ona fresk sənətini öyrətmişdi və tələbəsinin kiçik yaşda belə gözəl işlər gördüyünü bilirdi. Buna görə də Annanın istedadına güvənirdi.
-                    ​İndi qərar Annanın əlində idi. O, valideynlərinin onun qalaya getməsinə razı olmayacaqlarını bilirdi. Amma digər tərəfdən, həyatı boyu gördüyü səfalətdən qurtulmaq istəyirdi. Xəyallarında hər zaman gözəl ipək geyimlər, dadlı yeməklər, isti bir ev və "xoşbəxt həyat" canlandırırdı. Anna çox düşündükdən sonra evdən xəbərsiz yola çıxmağa qərar verdi. Onun tək narahatlığı, artıq yaşlı olan valideynlərinin (o doğulanda anasının 42, atasının 55 yaşı vardı) onu tək buraxdığını düşünüb kədərlənmələri və aclıqdan ölmələri idi. Amma gözlənilmədən bu çətinlikdə uzun çəkmədiki hall olundu.Baronun əsgərləri Annanın əməkhaqqının 3 də 1 ni öncədən ödəməyə razı oldular və Anna da bu pulu götürüb evə yollandı. Bir kağıza vəziyyəti izah edən məktub yazdı , yanınada zəruri ethiyaclarını ən azı 1 il rahatlığla qarşılayabiləcək olan öncadən aldığı əməkhaqqının hamsını qoydu və yol əşyalarını topladı (əcəmi dəyişək 1 nisbətən daha az yamağlı geyim, saç darağıvə bir iki başqa şəxsi əşaiyaları və Federikoyla son bir dəfə vidalaşarkən müəliiminin ona xatirə olarağ verdiyi fırçaları) İkisidə yaxşı bilirdiki Anna geri döndüyündə artığ istəsələr belə yenidən bir araya gələ bilməyəcəklər.Federiko onu öpdü bağrına basdı,gələcəkdəki həyatı üçün tövsiyələr verdi və son sözüdə "Qızım heçvaxt nə olursa olsun ümidini itirmə və mübarizə aparmağdan əl çəkmə! Mən sənə inanıram " oldu .6 gündüz 7 gecə İlk günlər düzənliklərlə irəliləyən araba Trentonun o tayında dağ yollarına çatanda yavaşladı. Qarşıda Alpi Venostenin soyuq yamacları görünürdü.Və nəhayət qalaya çatdılar. (Əsərin qısa məzmunu olduğu üçün buraları qısa kəsirəm)
+                    ​İndi qərar Annanın əlində idi. O, valideynlərinin onun qalaya getməsinə razı olmayacaqlarını bilirdi. Amma digər tərəfdən, həyatı boyu gördüyü səfalətdən qurtulmaq istəyirdi. Xəyallarında hər zaman gözəl ipək geyimlər, dadlı yeməklər, isti bir ev və "xoşbəxt həyat" canlandırırdı. Anna çox düşündükdən sonra evdən xəbərsiz yola çıxmağa qərar verdi. Onun tək narahatlığı, artıq yaşlı olan valideynlərinin (o doğulanda anasının 42, atasının 55 yaşı vardı) onu tək buraxdığını düşünüb kədərlənmələri və aclıqdan ölmələri idi. Amma gözlənilməzden bu çətinlikdə uzun çəkmədiki hall olundu.Baronun əsgərləri Annanın əməkhaqqının 3 də 1 ni öncədən ödəməyə razı oldular və Anna da bu pulu götürüb evə yollandı. Bir kağıza vəziyyəti izah edən məktub yazdı , yanınada zəruri ethiyaclarını ən azı 1 il rahatlığla qarşılayabiləcək olan öncadən aldığı əməkhaqqının hamsını qoydu və yol əşyalarını topladı (əcəmi dəyişək 1 nisbətən daha az yamağlı geyim, saç darağıvə bir iki başqa şəxsi əşaiyaları və Federikoyla son bir dəfə vidalaşarkən müəliiminin ona xatirə olarağ verdiyi fırçaları) İkisidə yaxşı bilirdiki Anna geri döndüyündə artığ istəsələr belə yenidən bir araya gələ bilməyəcəklər.Federiko onu öpdü bağrına basdı,gələcəkdəki həyatı üçün tövsiyələr verdi və son sözüdə "Qızım heçvaxt nə olursa olsun ümidini itirmə və mübarizə aparmağdan əl çəkmə! Mən sənə inanıram " oldu .6 gündüz 7 gecə İlk günlər düzənliklərlə irəliləyən araba Trentonun o tayında dağ yollarına çatanda yavaşladı. Qarşıda Alpi Venostenin soyuq yamacları görünürdü.Və nəhayət qalaya çatdılar. (Əsərin qısa məzmunu olduğu üçün buraları qısa kəsirəm)
                   </p>
                 </div>
               </div>
