@@ -366,48 +366,50 @@
         border-bottom: 1px solid var(--line);
       }
 
-      /* HAQQINDA BÖLMƏSİ - ŞƏKLİN DETALLARI KƏSİLMƏMƏSİ ÜÇÜN TƏNZİMLƏNDİ */
+      /* HAQQINDA BÖLMƏSİ - NORMAL PROPORSİYA VƏ KƏSİLMƏYƏN ARXA FON */
       #haqqinda {
         position: relative;
         background-image: url('assets/about background.png');
-        background-size: 100% 100%; /* Şəklin bütün detallarının (bitkilər, həkim, şəhər) tam görünməsi üçün */
+        background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         border-bottom: 1px solid var(--line);
-        padding: 100px 0;
+        padding: 60px 0; /* Padding azaldıldı ki şəkil vertikal olaraq uzanmasın */
       }
 
       #haqqinda .wrap {
         position: relative;
         z-index: 2;
-        max-width: 520px; /* Yazılar tam mərkəzi boşluqda qalır, kənar detalları örtmür */
+        max-width: 520px;
         margin: 0 auto;
         padding: 0 20px;
         background: transparent;
       }
 
       h2 {
-        margin: 0 0 24px;
+        margin: 0 0 20px;
         font-family: 'Cinzel', serif;
-        font-size: clamp(30px, 4vw, 44px);
+        font-size: clamp(28px, 3.5vw, 40px);
         letter-spacing: 0.05em;
         text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 5px rgba(0,0,0,0.8);
       }
 
+      /* BİRİNCİ ABSAZ - SƏLİQƏLİ ŞRİFT VƏ VƏBA HƏKİMİNİN ÜZÜNÜ AÇAN STRUKTUR */
       .lead {
-        font-size: clamp(21px, 2vw, 28px);
+        font-size: clamp(15px, 1.6vw, 19px); /* Şrift kiçildildi */
         color: var(--text);
-        line-height: 1.55;
-        margin: 0 0 24px;
-        padding-left: 18px;
+        line-height: 1.45;
+        margin: 0 0 20px;
+        padding-left: 14px;
         border-left: 3px solid var(--olive-bright);
         text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 5px rgba(0,0,0,0.8);
+        max-width: 72%; /* Mətnin eni sıxlaşdırıldı ki, sağdakı vəba həkiminin üzünü qapatmasın */
       }
 
       p {
         margin: 0 0 1em;
         color: var(--text);
-        font-size: 17px;
+        font-size: 17px; /* Digər yazılar olduğu kimi saxlanıldı */
         text-shadow: 0 2px 8px rgba(0,0,0,1), 0 0 4px rgba(0,0,0,0.8);
       }
 
@@ -616,6 +618,10 @@
         #haqqinda .wrap {
           padding: 0 10px;
         }
+
+        .lead {
+          max-width: 70%; /* Mobil ekranlarda da həkimin maskası açıq qalır */
+        }
       }    
     </style>
   </head>
@@ -787,7 +793,7 @@
                     ​Lakin hiç bir şey planlaşdırıldığı kimi getmədi, çünki onu tanıyan heç kimin Federikonun bu qədər tez yaşlanıb gücdən düşəcəyi və ölüm yatağında olacağı ağlına belə gəlmirdi.Əsgərlər əliboş qayıtmaqları halında kin və tərsliyi ilə məhşur olan Baronun onlara verəcəyi cəzanı çox yaxşı bilirdilər. Onların qulaqlarında Baronun sərt sözləri səslənirdi: "Ya Federikonu, ya da ondan daha yaxşı bir rəssamı bura gətirəcəksiniz, əks halda qala zindanının ac siçovulları sizi gözləyir."
                     ​Federikonun İtaliyanın ən bacarıqlı rəssamlarından olduğunu bilən əsgərlər, onun son günlərini yaşadığını görüb qorxuya düşdülər. Xülasə Federikonun qalaya gedə bilməyəcəyini anlayandan sonra əsgərlər ona sual vermək istəyirdilər. Amma birazda qorxurdularki yaşlı Federiko əsəbləşər və onlara yardım etmədən qovar.Nəhayət içlərindən biri cəsarət edib Federikodan özü kimi vəya özündən daha bacarıqlı rəssam olup olmadığını soruşdu.Yaşlı Federikonunsa cavabı çox qısa idi.O qürurla : “tələbəm Anna”.
                     ​Anna həqiqətən də rəssamlıqda bacarıqlı idi, lakin hələ öz potensialını tam kəşf etməmişdi. Üç il əvvəl Federiko bir il boyunca ona fresk sənətini öyrətmişdi və tələbəsinin kiçik yaşda belə gözəl işlər gördüyünü bilirdi. Buna görə də Annanın istedadına güvənirdi.
-                    ​İndi qərar Annanın əlində idi. O, valideynlərinin onun qalaya getməsinə razı olmayacaqlarını bilirdi. Amma digər tərəfdən, həyatı boyu gördüyü səfalətdən qurtulmaq istəyirdi. Xəyallarında hər zaman gözəl ipək geyimlər, dadlı yeməklər, isti bir ev və "xoşbəxt həyat" canlandırırdı. Anna çox düşündükdən sonra evdən xəbərsiz yola çıxmağa qərar verdi. Onun tək narahatlığı, artıq yaşlı olan valideynlərinin (o doğulanda anasının 42, atasının 55 yaşı vardı) onu tək buraxdığını düşünüb kədərlənmələri və aclıqdan ölmələri idi. Amma gözlənilməzdən bu çətinlikdə uzun çəkmədiki hall olundu.Baronun əsgərləri Annanın əməkhaqqının 3 də 1 ni öncədən ödəməyə razı oldular və Anna da bu pulu götürüb evə yollandı. Bir kağıza vəziyyəti izah edən məktub yazdı , yanınada zəruri ethiyaclarını ən azı 1 il rahatlığla qarşılayabiləcək olan öncadən aldığı əməkhaqqının hamsını qoydu və yol əşyalarını topladı (əcəmi dəyişək 1 nisbətən daha az yamağlı geyim, saç darağıvə bir iki başqa şəxsi əşaiyaları və Federikoyla son bir dəfə vidalaşarkən müəliiminin ona xatirə olarağ verdiyi fırçaları) İkisidə yaxşı bilirdiki Anna geri döndüyündə artığ istəsələr belə yenidən bir araya gələ bilməyəcəklər.Federiko onu öpdü bağrına basdı,gələcəkdəki həyatı üçün tövsiyələr verdi və son sözüdə "Qızım heçvaxt nə olursa olsun ümidini itirmə və mübarizə aparmağdan əl çəkmə! Mən sənə inanıram " oldu .6 gündüz 7 gecə İlk günlər düzənliklərlə irəliləyən araba Trentonun o tayında dağ yollarına çatanda yavaşladı. Qarşıda Alpi Venostenin soyuq yamacları görünürdü.Və nəhayət qalaya çatdılar. (Əsərin qısa məzmunu olduğu üçün buraları qısa kəsirəm)
+                    ​İndi qərar Annanın əlində idi. O, valideynlərinin onun qalaya getməsinə razı olmayacaqlarını bilirdi. Amma digər tərəfdən, həyatı boyu gördüyü səfalətdən qurtulmaq istəyirdi. Xəyallarında hər zaman gözəl ipək geyimlər, dadlı yeməklər, isti bir ev və "xoşbəxt həyat" canlandırırdı. Anna çox düşündükdən sonra evdən xəbərsiz yola çıxmağa qərar verdi. Onun tək narahatlığı, artıq yaşlı olan valideynlərinin (o doğulanda anasının 42, atasının 55 yaşı vardı) onu tək buraxdığını düşünüb kədərlənmələri və aclıqdan ölmələri idi. Amma gözlənilməzdən bu çətinlikdə uzun çəkmədiki hall olundu.Baronun əsgərləri Annanın əməkhaqqının 3 də 1 ni öncədən ödəməyə razı oldular və Anna da bu pulu götürüb evə yollandı. Bir kağıza vəziyyəti izah edən məktub yazdı , yanınada zəruri ethiyaclarını ən azı 1 il rahatlığla qarşılayabiləcek olan öncadən aldığı əməkhaqqının hamsını qoydu və yol əşyalarını topladı (əcəmi dəyişək 1 nisbətən daha az yamağlı geyim, saç darağıvə bir iki başqa şəxsi əşaiyaları və Federikoyla son bir dəfə vidalaşarkən müəliiminin ona xatirə olarağ verdiyi fırçaları) İkisidə yaxşı bilirdiki Anna geri döndüyündə artığ istəsələr belə yenidən bir araya gələ bilməyəcəklər.Federiko onu öpdü bağrına basdı,gələcəkdəki həyatı üçün tövsiyələr verdi və son sözüdə "Qızım heçvaxt nə olursa olsun ümidini itirmə və mübarizə aparmağdan əl çəkmə! Mən sənə inanıram " oldu .6 gündüz 7 gecə İlk günlər düzənliklərlə irəliləyən araba Trentonun o tayında dağ yollarına çatanda yavaşladı. Qarşıda Alpi Venostenin soyuq yamacları görünürdü.Və nəhayət qalaya çatdılar. (Əsərin qısa məzmunu olduğu üçün buraları qısa kəsirəm)
                   </p>
                 </div>
               </div>
